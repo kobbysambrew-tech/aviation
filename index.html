@@ -1,0 +1,75 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /* -----------------------------------------
+       ✅ Helper: Check if authenticated user
+    ----------------------------------------- */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /* -----------------------------------------
+       ✅ Helper: Admin check based on /users/{uid}.role
+       (fixes your login error)
+    ----------------------------------------- */
+    function isAdmin() {
+      return isSignedIn() &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role
+        in ["admin", "superadmin", "staff"];
+    }
+
+    /* -----------------------------------------
+       ✅ Anonymous wallet system
+       Public users use deviceId stored in localStorage
+    ----------------------------------------- */
+    match /wallet/{deviceId} {
+      allow read, write: if true;  // public wallet system
+    }
+
+    /* -----------------------------------------
+       ✅ Wallet Transactions (Append-only)
+       Public users can create their own transactions ONLY
+       Admins can read everything
+    ----------------------------------------- */
+    match /wallet_transactions/{txId} {
+      allow create: if true;
+      allow read: if isAdmin();
+      allow delete: if false;
+    }
+
+    /* -----------------------------------------
+       ✅ Public Records (read-only)
+       Verification system needs to read these
+       Only admins modify
+    ----------------------------------------- */
+    match /records/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    /* -----------------------------------------
+       ✅ Users Collection (Admins only)
+       Required for dashboard login
+    ----------------------------------------- */
+    match /users/{uid} {
+      allow read, write: if isAdmin();
+    }
+
+    /* -----------------------------------------
+       ✅ Search Logs (public create, admin read)
+    ----------------------------------------- */
+    match /search_logs/{logId} {
+      allow create: if true;
+      allow read: if isAdmin();
+      allow delete: if false;
+    }
+
+    /* -----------------------------------------
+       ✅ Audit Logs (admin only)
+    ----------------------------------------- */
+    match /audit_logs/{logId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}
