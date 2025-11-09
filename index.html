@@ -1,75 +1,135 @@
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghana National Air</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { background: linear-gradient(to bottom, #0b4f79, #000, #111); color:white; }
+    .fade-up { opacity:0; transform:translateY(30px); animation: fadeUp 1s forwards; }
+    @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+    .bounce { animation: bounce 1.6s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  </style>
+</head>
+<body class="font-sans overflow-x-hidden">
 
-    /* -----------------------------------------
-       ✅ Helper: Check if authenticated user
-    ----------------------------------------- */
-    function isSignedIn() {
-      return request.auth != null;
-    }
+  <!-- HERO -->
+  <section class="h-screen flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 fade-up">Ghana National Air — Regional Fleet Launch</h1>
+    <p class="text-lg md:text-xl max-w-3xl mb-8 text-gray-200 fade-up" style="animation-delay:0.2s;">
+      Launching with two brand‑new ATR 72‑600 aircraft (or 1–2 years old). Fully Ghanaian shareholders. Regional routes, national impact.
+    </p>
 
-    /* -----------------------------------------
-       ✅ Helper: Admin check based on /users/{uid}.role
-       (fixes your login error)
-    ----------------------------------------- */
-    function isAdmin() {
-      return isSignedIn() &&
-        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role
-        in ["admin", "superadmin", "staff"];
-    }
+    <div class="flex gap-4 fade-up" style="animation-delay:0.4s;">
+      <a href="#" class="bg-yellow-400 text-black text-lg px-6 py-3 rounded-xl font-semibold">Request Investor Deck</a>
+      <a href="#" class="bg-transparent border border-white text-white text-lg px-6 py-3 rounded-xl">Schedule a Call</a>
+    </div>
 
-    /* -----------------------------------------
-       ✅ Anonymous wallet system
-       Public users use deviceId stored in localStorage
-    ----------------------------------------- */
-    match /wallet/{deviceId} {
-      allow read, write: if true;  // public wallet system
-    }
+    <div class="absolute bottom-8 text-gray-300 bounce fade-up" style="animation-delay:0.6s;">↓ Scroll</div>
+  </section>
 
-    /* -----------------------------------------
-       ✅ Wallet Transactions (Append-only)
-       Public users can create their own transactions ONLY
-       Admins can read everything
-    ----------------------------------------- */
-    match /wallet_transactions/{txId} {
-      allow create: if true;
-      allow read: if isAdmin();
-      allow delete: if false;
-    }
+  <!-- AIRCRAFT INFO -->
+  <section class="py-20 px-6 md:px-24">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center fade-up">Why ATR 72‑600 (Our Launch Aircraft)</h2>
 
-    /* -----------------------------------------
-       ✅ Public Records (read-only)
-       Verification system needs to read these
-       Only admins modify
-    ----------------------------------------- */
-    match /records/{id} {
-      allow read: if true;
-      allow write: if isAdmin();
-    }
+    <div class="grid md:grid-cols-3 gap-6 fade-up" style="animation-delay:0.2s;">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-xl font-semibold mb-2">Cost (New / 1–2 years)</h3>
+        <p class="text-gray-300">New: $29M–32M<br>1–2 yrs old: $24M–28M</p>
+      </div>
 
-    /* -----------------------------------------
-       ✅ Users Collection (Admins only)
-       Required for dashboard login
-    ----------------------------------------- */
-    match /users/{uid} {
-      allow read, write: if isAdmin();
-    }
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-xl font-semibold mb-2">Capacity & Range</h3>
+        <p class="text-gray-300">68–78 seats<br>Range: 1,500 km</p>
+      </div>
 
-    /* -----------------------------------------
-       ✅ Search Logs (public create, admin read)
-    ----------------------------------------- */
-    match /search_logs/{logId} {
-      allow create: if true;
-      allow read: if isAdmin();
-      allow delete: if false;
-    }
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-xl font-semibold mb-2">Perfect for Ghana</h3>
+        <p class="text-gray-300">Low fuel burn, safe, perfect for short‑haul Accra routes.</p>
+      </div>
+    </div>
 
-    /* -----------------------------------------
-       ✅ Audit Logs (admin only)
-    ----------------------------------------- */
-    match /audit_logs/{logId} {
-      allow read, write: if isAdmin();
-    }
-  }
-}
+    <div class="mt-10 grid md:grid-cols-2 gap-8 fade-up" style="animation-delay:0.35s;">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-2xl font-semibold mb-4">Launch Route Strategy</h3>
+        <ul class="text-gray-300 list-disc list-inside space-y-2">
+          <li>Accra ↔ Kumasi</li>
+          <li>Accra ↔ Tamale</li>
+          <li>Accra ↔ Takoradi</li>
+          <li>Accra ↔ Abidjan / Lomé</li>
+        </ul>
+      </div>
+
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-2xl font-semibold mb-4">18‑Month Operational Plan</h3>
+        <ol class="text-gray-300 list-decimal list-inside space-y-2">
+          <li>Raise Ghana‑only equity</li>
+          <li>Secure GCAA AOC</li>
+          <li>Hire core leadership</li>
+          <li>Pilot training + maintenance contracts</li>
+          <li>Launch revenue flights (Month 12–18)</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCIAL SNAPSHOT -->
+  <section class="py-20 px-6 md:px-24 bg-black bg-opacity-40">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center fade-up">Financial Snapshot (2 ATR 72‑600)</h2>
+
+    <div class="grid md:grid-cols-3 gap-6 fade-up" style="animation-delay:0.2s;">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-xl font-semibold mb-2">Initial Capital</h3>
+        <p class="text-gray-300">Aircraft: $48M–56M<br>AOC: $0.5M–1M<br>Maintenance: $1.5M–3M</p>
+      </div>
+
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-xl font-semibold mb-2">12‑Month Cash Reserve</h3>
+        <p class="text-gray-300">$3M–7M</p>
+      </div>
+
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-xl font-semibold mb-2">Total Raise Target</h3>
+        <p class="text-gray-300 font-semibold">$55M–67M</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHAREHOLDER MODEL -->
+  <section class="py-20 px-6 md:px-24">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center fade-up">Shareholder & Governance Structure</h2>
+
+    <div class="grid md:grid-cols-2 gap-8 fade-up" style="animation-delay:0.2s;">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-2xl font-semibold mb-4">100% Ghanaian Ownership</h3>
+        <p class="text-gray-300">Founders + Ghanaian investors only. Independent board. Quarterly audits.</p>
+      </div>
+
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+        <h3 class="text-2xl font-semibold mb-4">Investor Protections</h3>
+        <ul class="text-gray-300 list-disc list-inside space-y-2">
+          <li>Board observer rights</li>
+          <li>Tranche‑based capital releases</li>
+          <li>Escrow for aircraft purchases</li>
+          <li>Transparency dashboard</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 text-center px-6 md:px-24 fade-up">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Investor Materials Ready</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto mb-8">Download the deck or request the financial model.</p>
+    <div class="flex gap-4 justify-center">
+      <a href="#" class="bg-yellow-400 text-black text-lg px-6 py-3 rounded-xl font-semibold">Download Investor Deck</a>
+      <a href="#" class="border border-white text-white text-lg px-6 py-3 rounded-xl">Request Model</a>
+    </div>
+  </section>
+
+  <footer class="py-8 text-center text-gray-400 text-sm">© Ghana National Air — Draft Materials</footer>
+
+</body>
+</html>
