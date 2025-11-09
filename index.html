@@ -6,18 +6,24 @@
 <title>Ghana National Air — Investor Deck</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-body { overflow:hidden; background:#000; color:white; font-family:sans-serif; }
-section { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2rem; text-align:center; transition: all 0.7s ease; }
+body { overflow:hidden; font-family:sans-serif; margin:0; }
+section { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2rem; text-align:center; transition: all 0.8s ease; }
 .hidden-slide { opacity:0; transform:translateY(50px) scale(0.95); position:absolute; top:0; width:100%; height:100%; }
 .nav-arrow { position:fixed; top:50%; transform:translateY(-50%); font-size:3rem; cursor:pointer; z-index:50; color:white; user-select:none; }
 #prev { left:1rem; }
 #next { right:1rem; }
-.slide-indicator { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%); font-size:1.5rem; color:#ccc; }
+.slide-indicator { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%); font-size:1.5rem; color:#fff; }
 .tilt { max-width:400px; margin:1rem auto; }
 .counter { font-weight:bold; font-size:2rem; }
 .fade-text { opacity:0; transform:translateY(20px); animation:fadeInUp 0.8s forwards; }
 @keyframes fadeInUp { to { opacity:1; transform:translateY(0);} }
+.gradient-bg1 { background: linear-gradient(135deg,#00c6ff,#0072ff); }
+.gradient-bg2 { background: linear-gradient(135deg,#ffafbd,#ffc3a0); }
+.gradient-bg3 { background: linear-gradient(135deg,#ff9966,#ff5e62); }
+.button-accent { background: linear-gradient(90deg,#ffcc33,#ff6600); color:#000; font-weight:bold; padding:1rem 2rem; border-radius:12px; transition:all 0.3s ease; }
+.button-accent:hover { transform:scale(1.05); }
 </style>
 </head>
 <body>
@@ -26,177 +32,195 @@ section { min-height:100vh; display:flex; flex-direction:column; justify-content
 Slides Start
 ============================ -->
 
-<section class="slide" id="slide1">
-  <video class="w-full h-full object-cover absolute top-0 left-0 z-0" autoplay muted loop>
+<section class="slide gradient-bg1 flex flex-col items-center justify-center text-white" id="slide1">
+  <video class="w-full h-full object-cover absolute top-0 left-0 z-0 opacity-30" autoplay muted loop>
     <source src="your-video.mp4" type="video/mp4">
   </video>
-  <div class="relative z-10">
+  <div class="relative z-10 max-w-5xl">
     <h1 class="text-7xl md:text-8xl font-bold mb-6 fade-text">Ghana National Air</h1>
-    <p class="text-2xl md:text-3xl max-w-4xl fade-text" style="animation-delay:0.2s">
-      Launching two ATR 72-600 aircraft, fully Ghanaian-owned. Connecting domestic and regional destinations while keeping profits in Ghana.
+    <p class="text-2xl md:text-3xl fade-text" style="animation-delay:0.2s">
+      Launching two ATR 72-600 aircraft, fully Ghanaian-owned. Connecting domestic and regional destinations while keeping profits in Ghana. Join us in building the nation's pride in aviation.
     </p>
   </div>
 </section>
 
-<section class="slide hidden-slide" id="slide2">
+<section class="slide gradient-bg2 hidden-slide" id="slide2">
   <h2 class="text-6xl font-bold mb-6 fade-text">Our Mission</h2>
   <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Ghana National Air aims to provide a fully Ghanaian-owned airline that strengthens domestic and regional connectivity. Retaining profits locally empowers investors and stimulates economic growth. Our airline creates jobs, enhances tourism, and serves as a symbol of national pride.
+    Ghana National Air provides a fully Ghanaian-owned airline that strengthens domestic and regional connectivity. Profits stay in Ghana, empowering investors, stimulating economic growth, creating jobs, and promoting tourism. Transparency ensures trust, and passengers experience world-class service.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide3">
+<section class="slide gradient-bg3 hidden-slide" id="slide3">
   <h2 class="text-6xl font-bold mb-6 fade-text">The Opportunity</h2>
   <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Domestic air travel is underserved. Foreign carriers dominate, and many cities lack connectivity. Rising demand and economic growth make this an ideal time for a fully Ghanaian-owned airline to capture the market.
+    Domestic air travel is underserved and foreign carriers dominate. Many cities have limited connectivity. Rising economic activity, urbanization, and regional demand make this the perfect moment to launch a fully Ghanaian-owned airline.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide4">
+<section class="slide gradient-bg1 hidden-slide" id="slide4">
   <h2 class="text-6xl font-bold mb-6 fade-text">Our Solution</h2>
   <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Operating ATR 72-600 aircraft, we offer reliable domestic and regional flights. Shareholders benefit from profits and decision-making power. Ghana National Air strengthens the aviation sector while keeping wealth in Ghana.
+    Operating ATR 72-600 aircraft for domestic and regional routes, Ghana National Air enables shareholders to enjoy profit participation and governance rights. Local investment retains economic value, builds aviation expertise, and ensures a sustainable airline.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide5">
+<section class="slide gradient-bg2 hidden-slide" id="slide5">
   <h2 class="text-6xl font-bold mb-12 fade-text">Why ATR 72-600</h2>
   <div class="grid md:grid-cols-3 gap-8">
-    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
       <h3 class="text-3xl font-semibold mb-4">Cost</h3>
-      <p class="text-xl text-gray-300 leading-relaxed">New aircraft cost $29–32M; 1–2 year old planes $24–28M. Low acquisition costs for a modern start-up fleet.</p>
+      <p class="text-xl leading-relaxed">
+        New aircraft cost $29–32M; 1–2 year old planes $24–28M. Low acquisition costs enable a cost-efficient startup fleet without sacrificing modern technology.
+      </p>
     </div>
-    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
       <h3 class="text-3xl font-semibold mb-4">Capacity & Range</h3>
-      <p class="text-xl text-gray-300 leading-relaxed">Seats 68–78 passengers, range up to 1,500 km, ideal for domestic and regional flights.</p>
+      <p class="text-xl leading-relaxed">
+        Seats 68–78 passengers, with a range up to 1,500 km. Perfect for domestic and regional flights connecting key cities efficiently.
+      </p>
     </div>
-    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
       <h3 class="text-3xl font-semibold mb-4">Efficiency</h3>
-      <p class="text-xl text-gray-300 leading-relaxed">Fuel-efficient, minimal maintenance downtime, optimized for short-haul operations.</p>
+      <p class="text-xl leading-relaxed">
+        Fuel-efficient engines reduce operational costs. Minimal maintenance downtime ensures maximum availability and profitability.
+      </p>
     </div>
   </div>
 </section>
 
-<section class="slide hidden-slide" id="slide6">
+<section class="slide gradient-bg3 hidden-slide" id="slide6">
   <h2 class="text-6xl font-bold mb-6 fade-text">Aircraft Interior</h2>
   <img src="interior-image.png" alt="Interior" class="rounded-lg shadow-lg w-full max-w-3xl mb-6 fade-text">
-  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Comfortable seating for 68–78 passengers, modern avionics, and efficient boarding. Optimized for passenger comfort and operational reliability on short-haul flights.
+  <p class="text-2xl max-w-4xl fade-text">
+    Spacious, comfortable seating for 68–78 passengers with modern amenities. Boarding and disembarkation optimized for efficiency. Ensures superior passenger experience on every flight.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide7">
+<section class="slide gradient-bg1 hidden-slide" id="slide7">
   <h2 class="text-6xl font-bold mb-6 fade-text">Fleet Plan</h2>
-  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Start with two new or 1–2 year old aircraft. Expand gradually as demand grows. Strategic maintenance ensures maximum uptime and safety.
+  <p class="text-2xl max-w-4xl fade-text">
+    Start with two new or 1–2 year old ATR 72-600 aircraft. Expand fleet as demand grows. Strategic maintenance and optimized scheduling ensure safety, reliability, and maximum revenue generation.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide8">
+<section class="slide gradient-bg2 hidden-slide" id="slide8">
   <h2 class="text-6xl font-bold mb-6 fade-text">Domestic Routes</h2>
-  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Initial routes: Accra ↔ Kumasi, Accra ↔ Tamale, Accra ↔ Takoradi. 2–3 daily flights per route maximize revenue and passenger access.
+  <p class="text-2xl max-w-4xl fade-text">
+    Initial routes include Accra ↔ Kumasi, Accra ↔ Tamale, and Accra ↔ Takoradi. 2–3 daily flights maximize revenue while providing essential connectivity. Efficient scheduling reduces costs and improves customer satisfaction.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide9">
+<section class="slide gradient-bg3 hidden-slide" id="slide9">
   <h2 class="text-6xl font-bold mb-6 fade-text">Regional Routes</h2>
-  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Accra ↔ Abidjan, Accra ↔ Lomé, Accra ↔ Lagos initially. ECOWAS expansion planned. Optimized frequency ensures profitability while meeting demand.
+  <p class="text-2xl max-w-4xl fade-text">
+    Expansion includes Accra ↔ Abidjan, Accra ↔ Lomé, Accra ↔ Lagos, eventually covering ECOWAS destinations. Routes selected for profitability and high demand, ensuring strong early adoption.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide10">
+<section class="slide gradient-bg1 hidden-slide" id="slide10">
   <h2 class="text-6xl font-bold mb-6 fade-text">Operational Timeline</h2>
-  <ol class="text-2xl max-w-4xl space-y-3 fade-text">
+  <ol class="text-2xl max-w-4xl space-y-4 fade-text">
     <li>0–6 months: Raise equity, regulatory approvals, finalize aircraft selection.</li>
-    <li>6–12 months: Recruit/train staff, safety certifications, dashboards.</li>
-    <li>12–18 months: Launch flights, establish brand, optimize operations.</li>
+    <li>6–12 months: Recruit/train staff, safety certifications, operational dashboards.</li>
+    <li>12–18 months: Launch flights, establish brand presence, optimize operations.</li>
   </ol>
 </section>
 
-<section class="slide hidden-slide" id="slide11">
+<section class="slide gradient-bg2 hidden-slide" id="slide11">
   <h2 class="text-6xl font-bold mb-6 fade-text">Shareholder Model</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    100% Ghanaian ownership. Shareholders have voting rights, profit participation, and quarterly reports. Profits remain in Ghana.
+    100% Ghanaian ownership. Shareholders enjoy voting rights, profit participation, and transparent quarterly reporting. Retains national wealth while promoting accountability.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide12">
+<section class="slide gradient-bg3 hidden-slide" id="slide12">
   <h2 class="text-6xl font-bold mb-6 fade-text">Governance & Transparency</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Independent board oversees operations and finances. Quarterly audits, live dashboards, and transparency eliminate corruption.
+    Independent board oversees operations and finances. Real-time dashboards, quarterly audits, and transparent reporting eliminate corruption and build investor confidence.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide13">
+<section class="slide gradient-bg1 hidden-slide" id="slide13">
   <h2 class="text-6xl font-bold mb-6 fade-text">Investor Protections</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Capital released in tranches tied to milestones. Key decisions require shareholder approval. Escrow for major expenses ensures accountability.
+    Capital released in milestones. Major decisions require shareholder approval. Escrow accounts for significant expenses ensure accountability and mitigate risk.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide14">
+<section class="slide gradient-bg2 hidden-slide" id="slide14">
   <h2 class="text-6xl font-bold mb-6 fade-text">Financial Snapshot</h2>
   <div class="grid md:grid-cols-3 gap-6">
-    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
       <h3 class="text-3xl font-semibold mb-4">Initial Capital</h3>
       <p class="text-2xl counter" data-target="56000000">$0</p>
     </div>
-    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
       <h3 class="text-3xl font-semibold mb-4">12-Month Reserve</h3>
       <p class="text-2xl counter" data-target="7000000">$0</p>
     </div>
-    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
       <h3 class="text-3xl font-semibold mb-4">Total Raise</h3>
       <p class="text-2xl counter" data-target="67000000">$0</p>
     </div>
   </div>
 </section>
 
-<section class="slide hidden-slide" id="slide15">
+<!-- Revenue Chart Slide -->
+<section class="slide gradient-bg3 hidden-slide" id="slide15">
   <h2 class="text-6xl font-bold mb-6 fade-text">Revenue Model</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Ticket sales on domestic and regional routes. Low operating costs with ATR 72-600, profit-sharing with shareholders, and potential for strong margins.
+    Revenue primarily through ticket sales, secondary through cargo and partnerships. Low operational costs maximize profitability while profit-sharing ensures shareholder returns.
   </p>
+  <div class="w-full max-w-4xl mt-8">
+    <canvas id="revenueChart"></canvas>
+  </div>
 </section>
 
-<section class="slide hidden-slide" id="slide16">
+<!-- Profit Pie Chart Slide -->
+<section class="slide gradient-bg2 hidden-slide" id="slide16">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Profit Distribution</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Shareholders participate fairly, promoting transparency and confidence.
+  </p>
+  <div class="w-full max-w-3xl mt-8">
+    <canvas id="profitPieChart"></canvas>
+  </div>
+</section>
+
+<!-- Market Opportunity Slide -->
+<section class="slide gradient-bg1 hidden-slide" id="slide17">
   <h2 class="text-6xl font-bold mb-6 fade-text">Market Opportunity</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Growing Ghanaian air travel demand, under-served regional routes, and rising economic activity make this an ideal time to launch. Capture both domestic and ECOWAS markets.
+    Ghanaian domestic air travel is growing, and regional ECOWAS routes are underserved. This bar chart illustrates potential passenger demand.
   </p>
+  <div class="w-full max-w-4xl mt-8">
+    <canvas id="marketBarChart"></canvas>
+  </div>
 </section>
 
-<section class="slide hidden-slide" id="slide17">
+<section class="slide gradient-bg2 hidden-slide" id="slide18">
   <h2 class="text-6xl font-bold mb-6 fade-text">Marketing & Branding</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Ghanaian pride, social media campaigns, corporate partnerships, loyalty programs, and tourism promotion. Create a recognizable, trusted brand.
+    Leverage Ghanaian pride in aviation. Social media campaigns, loyalty programs, partnerships with local businesses, and tourism initiatives build strong brand recognition and passenger loyalty.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide18">
+<section class="slide gradient-bg3 hidden-slide" id="slide19">
   <h2 class="text-6xl font-bold mb-6 fade-text">Risk Mitigation</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Operational, financial, and market risks mitigated with insurance, governance, audits, and transparent reporting. Safety and contingency planning included.
+    Operational, financial, and market risks are mitigated through insurance, governance, audits, and contingency planning. Ensures safety, service reliability, and investor confidence.
   </p>
 </section>
 
-<section class="slide hidden-slide" id="slide19">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Investor ROI</h2>
-  <p class="text-2xl max-w-4xl fade-text">
-    Equity growth, profit-sharing, and dividends. Long-term ownership aligned with Ghanaian economic growth. Shareholders participate in major decisions.
-  </p>
-</section>
-
-<section class="slide hidden-slide" id="slide20">
+<section class="slide gradient-bg1 hidden-slide" id="slide20">
   <h2 class="text-6xl font-bold mb-6 fade-text">Investor Materials</h2>
   <p class="text-2xl max-w-4xl mb-6 fade-text">
-    Access full investor deck, financial models, and prospectus. Review detailed projections, operations, and governance.
+    Access the full investor deck, financial models, and prospectus. Review detailed projections, operational plans, and governance policies.
   </p>
   <div class="flex gap-6 justify-center">
-    <a href="investor-deck.pdf" class="bg-yellow-400 text-black px-8 py-4 rounded-xl font-semibold text-xl" target="_blank">Download Deck</a>
-    <a href="financial-model.pdf" class="border border-white text-white px-8 py-4 rounded-xl text-xl" target="_blank">View Financials</a>
+    <a href="investor-deck.pdf" class="button-accent" target="_blank">Download Deck</a>
+    <a href="financial-model.pdf" class="button-accent" target="_blank">View Financials</a>
   </div>
 </section>
 
@@ -262,6 +286,28 @@ document.querySelectorAll('.counter').forEach(el=>{
 
 // Tilt cards
 VanillaTilt.init(document.querySelectorAll(".tilt"), { max:15, speed:400, glare:true, "max-glare":0.3 });
+
+// Charts
+const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+const revenueChart = new Chart(revenueCtx, {
+  type: 'line',
+  data: { labels: ['Year 1','Year 2','Year 3','Year 4','Year 5'], datasets: [{ label: 'Revenue ($M)', data: [5,12,20,28,35], backgroundColor:'rgba(255,204,51,0.3)', borderColor:'rgba(255,204,51,1)', borderWidth:3, fill:true, tension:0.3 }] },
+  options: { responsive:true, plugins:{ legend:{ display:false } } }
+});
+
+const profitCtx = document.getElementById('profitPieChart').getContext('2d');
+const profitPieChart = new Chart(profitCtx, {
+  type: 'pie',
+  data: { labels:['Shareholders','Reinvestment','Reserve Fund'], datasets:[{ data:[50,30,20], backgroundColor:['#ffcc33','#00c6ff','#ff6600'] }] },
+  options:{ responsive:true, plugins:{ legend:{ position:'bottom' } } }
+});
+
+const marketCtx = document.getElementById('marketBarChart').getContext('2d');
+const marketBarChart = new Chart(marketCtx, {
+  type:'bar',
+  data:{ labels:['Domestic','Regional','ECOWAS'], datasets:[{ label:'Potential Passengers (000s)', data:[250,150,100], backgroundColor:['#0072ff','#ff9966','#ff5e62'] }] },
+  options:{ responsive:true, plugins:{ legend:{ display:false } }, scales:{ y:{ beginAtZero:true } } }
+});
 </script>
 
 </body>
