@@ -3,133 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ghana National Air</title>
+  <title>Ghana National Air — Investor Portal</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <style>
-    body { background: linear-gradient(to bottom, #0b4f79, #000, #111); color:white; }
+    body { background: linear-gradient(to bottom, #0b4f79, #000, #111); color:white; scroll-behavior: smooth;}
     .fade-up { opacity:0; transform:translateY(30px); animation: fadeUp 1s forwards; }
     @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
     .bounce { animation: bounce 1.6s infinite; }
-    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes bounce { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-6px);} }
+    .counter { font-weight: bold; }
   </style>
 </head>
 <body class="font-sans overflow-x-hidden">
 
-  <!-- HERO -->
-  <section class="h-screen flex flex-col items-center justify-center text-center px-6">
-    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 fade-up">Ghana National Air — Regional Fleet Launch</h1>
-    <p class="text-lg md:text-xl max-w-3xl mb-8 text-gray-200 fade-up" style="animation-delay:0.2s;">
-      Launching with two brand‑new ATR 72‑600 aircraft (or 1–2 years old). Fully Ghanaian shareholders. Regional routes, national impact.
-    </p>
-
-    <div class="flex gap-4 fade-up" style="animation-delay:0.4s;">
-      <a href="#" class="bg-yellow-400 text-black text-lg px-6 py-3 rounded-xl font-semibold">Request Investor Deck</a>
-      <a href="#" class="bg-transparent border border-white text-white text-lg px-6 py-3 rounded-xl">Schedule a Call</a>
+  <!-- HERO / VIDEO -->
+  <section class="relative h-screen w-full">
+    <video class="w-full h-full object-cover" autoplay muted loop>
+      <source src="your-video.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black/50">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 fade-up">Ghana National Air</h1>
+      <p class="text-xl md:text-2xl max-w-3xl mb-6 fade-up" style="animation-delay:0.2s;">Launching two brand-new ATR 72-600 aircraft (or 1–2 years old). 100% Ghanaian shareholders. Regional routes, national impact.</p>
+      <div class="flex gap-4 fade-up" style="animation-delay:0.4s;">
+        <a href="#investor-materials" class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold">Request Investor Deck</a>
+        <a href="#contact" class="bg-transparent border border-white px-6 py-3 rounded-xl">Contact</a>
+      </div>
+      <div class="absolute bottom-8 text-gray-300 bounce fade-up" style="animation-delay:0.6s;">↓ Scroll</div>
     </div>
-
-    <div class="absolute bottom-8 text-gray-300 bounce fade-up" style="animation-delay:0.6s;">↓ Scroll</div>
   </section>
 
-  <!-- AIRCRAFT INFO -->
+  <!-- AIRCRAFT SECTION -->
   <section class="py-20 px-6 md:px-24">
-    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center fade-up">Why ATR 72‑600 (Our Launch Aircraft)</h2>
-
-    <div class="grid md:grid-cols-3 gap-6 fade-up" style="animation-delay:0.2s;">
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
-        <h3 class="text-xl font-semibold mb-2">Cost (New / 1–2 years)</h3>
-        <p class="text-gray-300">New: $29M–32M<br>1–2 yrs old: $24M–28M</p>
+    <h2 class="text-4xl font-bold mb-12 text-center fade-up">Why ATR 72-600</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
+        <h3 class="text-xl font-semibold mb-2">Cost (New / 1–2 Years)</h3>
+        <p class="text-gray-300">$29M–32M (new)<br>$24M–28M (1–2 yrs)</p>
       </div>
-
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
         <h3 class="text-xl font-semibold mb-2">Capacity & Range</h3>
-        <p class="text-gray-300">68–78 seats<br>Range: 1,500 km</p>
+        <p class="text-gray-300">68–78 seats<br>Range: 1,500 km — ideal for domestic & regional routes</p>
       </div>
-
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
-        <h3 class="text-xl font-semibold mb-2">Perfect for Ghana</h3>
-        <p class="text-gray-300">Low fuel burn, safe, perfect for short‑haul Accra routes.</p>
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
+        <h3 class="text-xl font-semibold mb-2">Why Ghana</h3>
+        <p class="text-gray-300">Efficient fuel burn, short-field performance, low operating costs</p>
       </div>
     </div>
+  </section>
 
-    <div class="mt-10 grid md:grid-cols-2 gap-8 fade-up" style="animation-delay:0.35s;">
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
-        <h3 class="text-2xl font-semibold mb-4">Launch Route Strategy</h3>
-        <ul class="text-gray-300 list-disc list-inside space-y-2">
+  <!-- ROUTE MAP / PLAN -->
+  <section class="py-20 px-6 md:px-24">
+    <h2 class="text-4xl font-bold mb-12 text-center fade-up">Planned Routes</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up">
+        <h3 class="text-2xl font-semibold mb-4">Domestic Routes</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2">
           <li>Accra ↔ Kumasi</li>
           <li>Accra ↔ Tamale</li>
           <li>Accra ↔ Takoradi</li>
-          <li>Accra ↔ Abidjan / Lomé</li>
         </ul>
       </div>
-
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
-        <h3 class="text-2xl font-semibold mb-4">18‑Month Operational Plan</h3>
-        <ol class="text-gray-300 list-decimal list-inside space-y-2">
-          <li>Raise Ghana‑only equity</li>
-          <li>Secure GCAA AOC</li>
-          <li>Hire core leadership</li>
-          <li>Pilot training + maintenance contracts</li>
-          <li>Launch revenue flights (Month 12–18)</li>
-        </ol>
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up" style="animation-delay:0.2s;">
+        <h3 class="text-2xl font-semibold mb-4">Regional Routes</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2">
+          <li>Accra ↔ Abidjan</li>
+          <li>Accra ↔ Lomé</li>
+          <li>Accra ↔ Lagos</li>
+        </ul>
       </div>
+    </div>
+    <div class="mt-10 text-gray-300 text-center fade-up" style="animation-delay:0.4s;">
+      <!-- Placeholder for route map image / interactive map -->
+      <img src="ghana-map-routes.png" alt="Route Map" class="mx-auto w-full max-w-xl rounded-lg shadow-lg">
     </div>
   </section>
 
-  <!-- FINANCIAL SNAPSHOT -->
-  <section class="py-20 px-6 md:px-24 bg-black bg-opacity-40">
-    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center fade-up">Financial Snapshot (2 ATR 72‑600)</h2>
+  <!-- OPERATIONAL PLAN -->
+  <section class="py-20 px-6 md:px-24 bg-black/40">
+    <h2 class="text-4xl font-bold mb-12 text-center fade-up">18-Month Operational Plan</h2>
+    <ol class="list-decimal list-inside text-gray-300 space-y-4 max-w-3xl mx-auto fade-up">
+      <li>Raise Ghanaian equity for aircraft purchase</li>
+      <li>Secure GCAA AOC & approvals (6–12 months)</li>
+      <li>Recruit core leadership & key staff</li>
+      <li>Pilot training & maintenance setup</li>
+      <li>Launch revenue flights on core domestic & regional routes (Month 12–18)</li>
+    </ol>
+  </section>
 
-    <div class="grid md:grid-cols-3 gap-6 fade-up" style="animation-delay:0.2s;">
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+  <!-- FINANCIAL SUMMARY -->
+  <section class="py-20 px-6 md:px-24">
+    <h2 class="text-4xl font-bold mb-12 text-center fade-up">Financial Snapshot</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
         <h3 class="text-xl font-semibold mb-2">Initial Capital</h3>
-        <p class="text-gray-300">Aircraft: $48M–56M<br>AOC: $0.5M–1M<br>Maintenance: $1.5M–3M</p>
+        <p class="text-gray-300">$48M–56M (2 ATR 72-600)<br>$0.5–1M AOC/setup<br>$1.5–3M spare parts & maintenance</p>
       </div>
-
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
-        <h3 class="text-xl font-semibold mb-2">12‑Month Cash Reserve</h3>
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
+        <h3 class="text-xl font-semibold mb-2">12-Month Operating Reserve</h3>
         <p class="text-gray-300">$3M–7M</p>
       </div>
-
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
         <h3 class="text-xl font-semibold mb-2">Total Raise Target</h3>
         <p class="text-gray-300 font-semibold">$55M–67M</p>
       </div>
     </div>
   </section>
 
-  <!-- SHAREHOLDER MODEL -->
-  <section class="py-20 px-6 md:px-24">
-    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center fade-up">Shareholder & Governance Structure</h2>
-
-    <div class="grid md:grid-cols-2 gap-8 fade-up" style="animation-delay:0.2s;">
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+  <!-- SHAREHOLDER & GOVERNANCE -->
+  <section class="py-20 px-6 md:px-24 bg-black/50">
+    <h2 class="text-4xl font-bold mb-12 text-center fade-up">Shareholder & Governance</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
         <h3 class="text-2xl font-semibold mb-4">100% Ghanaian Ownership</h3>
-        <p class="text-gray-300">Founders + Ghanaian investors only. Independent board. Quarterly audits.</p>
+        <p class="text-gray-300">Founders and Ghanaian investors only. Independent board. Quarterly audits and live dashboard updates.</p>
       </div>
-
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800">
+      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
         <h3 class="text-2xl font-semibold mb-4">Investor Protections</h3>
         <ul class="text-gray-300 list-disc list-inside space-y-2">
-          <li>Board observer rights</li>
-          <li>Tranche‑based capital releases</li>
-          <li>Escrow for aircraft purchases</li>
-          <li>Transparency dashboard</li>
+          <li>Board observer rights for major investors</li>
+          <li>Escrow on aircraft purchases</li>
+          <li>Tranche-based capital releases tied to milestones</li>
+          <li>Quarterly financial transparency dashboard</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-28 text-center px-6 md:px-24 fade-up">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Investor Materials Ready</h2>
-    <p class="text-gray-300 max-w-2xl mx-auto mb-8">Download the deck or request the financial model.</p>
+  <!-- INVESTOR MATERIALS CTA -->
+  <section id="investor-materials" class="py-28 text-center px-6 md:px-24 fade-up">
+    <h2 class="text-4xl font-bold mb-6">Investor Materials Ready</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto mb-8">Download the investor deck, request financial models, or view a sample PDF prospectus.</p>
     <div class="flex gap-4 justify-center">
-      <a href="#" class="bg-yellow-400 text-black text-lg px-6 py-3 rounded-xl font-semibold">Download Investor Deck</a>
-      <a href="#" class="border border-white text-white text-lg px-6 py-3 rounded-xl">Request Model</a>
+      <a href="investor-deck.pdf" class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold" target="_blank">Download Deck</a>
+      <a href="financial-model.pdf" class="border border-white text-white px-6 py-3 rounded-xl" target="_blank">Financial Model</a>
+      <a href="prospectus.pdf" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-xl" target="_blank">Sample Prospectus</a>
     </div>
   </section>
 
-  <footer class="py-8 text-center text-gray-400 text-sm">© Ghana National Air — Draft Materials</footer>
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-gray-400 text-sm">
+    © Ghana National Air — Draft investor portal. All rights reserved.
+  </footer>
 
+  <script>
+    // Vanilla Tilt for cards
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.3,
+    });
+
+    // Animate fade-up on scroll
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.style.animation = 'fadeUp 1s forwards';
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
 </body>
 </html>
