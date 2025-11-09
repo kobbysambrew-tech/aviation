@@ -1,273 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ghana National Air — Investor Portal</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-  <style>
-    body { background: linear-gradient(to bottom, #0b4f79, #000, #111); color:white; scroll-behavior: smooth;}
-    section { min-height: 100vh; display:flex; flex-direction:column; justify-content:center;}
-    .fade-up { opacity:0; transform:translateY(30px); animation: fadeUp 1s forwards; }
-    @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
-    .bounce { animation: bounce 1.6s infinite; }
-    @keyframes bounce { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-6px);} }
-    .counter { font-weight: bold; font-size:1.5rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghana National Air — Investor Deck</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+<style>
+body { overflow:hidden; background:#000; color:white; font-family:sans-serif; }
+section { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2rem; text-align:center; transition: all 0.7s ease; }
+.hidden-slide { opacity:0; transform:translateY(50px) scale(0.95); position:absolute; top:0; width:100%; height:100%; }
+.nav-arrow { position:fixed; top:50%; transform:translateY(-50%); font-size:3rem; cursor:pointer; z-index:50; color:white; user-select:none; }
+#prev { left:1rem; }
+#next { right:1rem; }
+.slide-indicator { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%); font-size:1.5rem; color:#ccc; }
+.tilt { max-width:400px; margin:1rem auto; }
+.counter { font-weight:bold; font-size:2rem; }
+.fade-text { opacity:0; transform:translateY(20px); animation:fadeInUp 0.8s forwards; }
+@keyframes fadeInUp { to { opacity:1; transform:translateY(0);} }
+</style>
 </head>
-<body class="font-sans overflow-x-hidden">
+<body>
 
-<!-- 1️⃣ Hero / Vision -->
-<section class="relative h-screen w-full bg-black">
-  <video class="w-full h-full object-cover" autoplay muted loop>
+<!-- ============================
+Slides Start
+============================ -->
+
+<section class="slide" id="slide1">
+  <video class="w-full h-full object-cover absolute top-0 left-0 z-0" autoplay muted loop>
     <source src="your-video.mp4" type="video/mp4">
   </video>
-  <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black/50">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4 fade-up">Ghana National Air</h1>
-    <p class="text-xl md:text-2xl max-w-3xl mb-6 fade-up" style="animation-delay:0.2s;">100% Ghanaian owned, launching two ATR 72-600 aircraft. Domestic & regional growth.</p>
-    <div class="flex gap-4 fade-up" style="animation-delay:0.4s;">
-      <a href="#investor-materials" class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold">Request Deck</a>
-      <a href="#contact" class="bg-transparent border border-white px-6 py-3 rounded-xl">Contact</a>
-    </div>
-    <div class="absolute bottom-8 text-gray-300 bounce fade-up" style="animation-delay:0.6s;">↓ Scroll</div>
+  <div class="relative z-10">
+    <h1 class="text-7xl md:text-8xl font-bold mb-6 fade-text">Ghana National Air</h1>
+    <p class="text-2xl md:text-3xl max-w-4xl fade-text" style="animation-delay:0.2s">
+      Launching two ATR 72-600 aircraft, fully Ghanaian-owned. Connecting domestic and regional destinations while keeping profits in Ghana.
+    </p>
   </div>
 </section>
 
-<!-- 2️⃣ Mission Statement -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Our Mission</h2>
-  <p class="text-gray-300 text-lg max-w-3xl mx-auto fade-up">Provide Ghana with a fully-owned airline, keeping profits local, ensuring transparency, and empowering investors.</p>
+<section class="slide hidden-slide" id="slide2">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Our Mission</h2>
+  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
+    Ghana National Air aims to provide a fully Ghanaian-owned airline that strengthens domestic and regional connectivity. Retaining profits locally empowers investors and stimulates economic growth. Our airline creates jobs, enhances tourism, and serves as a symbol of national pride.
+  </p>
 </section>
 
-<!-- 3️⃣ Problem / Opportunity -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">The Opportunity</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>Foreign airlines dominate domestic and regional routes.</li>
-    <li>Limited connectivity within Ghana and West Africa.</li>
-    <li>Revenue leaks outside the country.</li>
-    <li>Growing market demand for regional travel.</li>
-  </ul>
+<section class="slide hidden-slide" id="slide3">
+  <h2 class="text-6xl font-bold mb-6 fade-text">The Opportunity</h2>
+  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
+    Domestic air travel is underserved. Foreign carriers dominate, and many cities lack connectivity. Rising demand and economic growth make this an ideal time for a fully Ghanaian-owned airline to capture the market.
+  </p>
 </section>
 
-<!-- 4️⃣ Solution / Ghana National Air -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Our Solution</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>100% Ghanaian owned airline.</li>
-    <li>Modern ATR 72-600 fleet.</li>
-    <li>Revenue participation for shareholders.</li>
-    <li>Transparent operations with quarterly reporting.</li>
-  </ul>
+<section class="slide hidden-slide" id="slide4">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Our Solution</h2>
+  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
+    Operating ATR 72-600 aircraft, we offer reliable domestic and regional flights. Shareholders benefit from profits and decision-making power. Ghana National Air strengthens the aviation sector while keeping wealth in Ghana.
+  </p>
 </section>
 
-<!-- 5️⃣ Why ATR 72-600 -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-12 text-center fade-up">Why ATR 72-600</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
-      <h3 class="text-xl font-semibold mb-2">Cost</h3>
-      <p class="text-gray-300">$29–32M (new)<br>$24–28M (1–2 yrs)</p>
+<section class="slide hidden-slide" id="slide5">
+  <h2 class="text-6xl font-bold mb-12 fade-text">Why ATR 72-600</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Cost</h3>
+      <p class="text-xl text-gray-300 leading-relaxed">New aircraft cost $29–32M; 1–2 year old planes $24–28M. Low acquisition costs for a modern start-up fleet.</p>
     </div>
-    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
-      <h3 class="text-xl font-semibold mb-2">Capacity & Range</h3>
-      <p class="text-gray-300">68–78 seats<br>Range: 1,500 km — perfect for domestic & regional routes</p>
+    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Capacity & Range</h3>
+      <p class="text-xl text-gray-300 leading-relaxed">Seats 68–78 passengers, range up to 1,500 km, ideal for domestic and regional flights.</p>
     </div>
-    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
-      <h3 class="text-xl font-semibold mb-2">Efficiency</h3>
-      <p class="text-gray-300">Low operating costs, fuel-efficient, short-field performance</p>
+    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Efficiency</h3>
+      <p class="text-xl text-gray-300 leading-relaxed">Fuel-efficient, minimal maintenance downtime, optimized for short-haul operations.</p>
     </div>
   </div>
 </section>
 
-<!-- 6️⃣ Aircraft Interior -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Aircraft Interior</h2>
-  <img src="interior-image.png" alt="ATR 72 Interior" class="mx-auto rounded-lg shadow-lg fade-up">
-  <p class="text-gray-300 text-center max-w-3xl mx-auto mt-4 fade-up">Comfortable 68–78 seating layout, safety features, modern avionics, ideal for regional flights.</p>
+<section class="slide hidden-slide" id="slide6">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Aircraft Interior</h2>
+  <img src="interior-image.png" alt="Interior" class="rounded-lg shadow-lg w-full max-w-3xl mb-6 fade-text">
+  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
+    Comfortable seating for 68–78 passengers, modern avionics, and efficient boarding. Optimized for passenger comfort and operational reliability on short-haul flights.
+  </p>
 </section>
 
-<!-- 7️⃣ Fleet Plan -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Fleet Plan</h2>
-  <p class="text-gray-300 max-w-3xl mx-auto fade-up">Start with 2 aircraft, fully new or 1–2 years old. Option to expand as demand grows. Full maintenance & spare strategy in place.</p>
+<section class="slide hidden-slide" id="slide7">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Fleet Plan</h2>
+  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
+    Start with two new or 1–2 year old aircraft. Expand gradually as demand grows. Strategic maintenance ensures maximum uptime and safety.
+  </p>
 </section>
 
-<!-- 8️⃣ Domestic Routes -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Domestic Routes</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>Accra ↔ Kumasi</li>
-    <li>Accra ↔ Tamale</li>
-    <li>Accra ↔ Takoradi</li>
-  </ul>
-  <img src="ghana-map-routes.png" alt="Route Map" class="mx-auto w-full max-w-xl rounded-lg shadow-lg mt-4 fade-up">
+<section class="slide hidden-slide" id="slide8">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Domestic Routes</h2>
+  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
+    Initial routes: Accra ↔ Kumasi, Accra ↔ Tamale, Accra ↔ Takoradi. 2–3 daily flights per route maximize revenue and passenger access.
+  </p>
 </section>
 
-<!-- 9️⃣ Regional Routes -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Regional Routes</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>Accra ↔ Abidjan</li>
-    <li>Accra ↔ Lomé</li>
-    <li>Accra ↔ Lagos</li>
-  </ul>
+<section class="slide hidden-slide" id="slide9">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Regional Routes</h2>
+  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
+    Accra ↔ Abidjan, Accra ↔ Lomé, Accra ↔ Lagos initially. ECOWAS expansion planned. Optimized frequency ensures profitability while meeting demand.
+  </p>
 </section>
 
-<!-- 🔟 Operational Timeline -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Operational Timeline</h2>
-  <ol class="list-decimal list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>Months 0–6: Raise equity & approvals</li>
-    <li>Months 6–12: Hiring, training, AOC completion</li>
-    <li>Months 12–18: Launch revenue flights</li>
+<section class="slide hidden-slide" id="slide10">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Operational Timeline</h2>
+  <ol class="text-2xl max-w-4xl space-y-3 fade-text">
+    <li>0–6 months: Raise equity, regulatory approvals, finalize aircraft selection.</li>
+    <li>6–12 months: Recruit/train staff, safety certifications, dashboards.</li>
+    <li>12–18 months: Launch flights, establish brand, optimize operations.</li>
   </ol>
 </section>
 
-<!-- 1️⃣1️⃣ Shareholder Model -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Shareholder Model</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>100% Ghanaian investors only</li>
-    <li>Direct equity in airline</li>
-    <li>Quarterly reporting & oversight</li>
-  </ul>
+<section class="slide hidden-slide" id="slide11">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Shareholder Model</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    100% Ghanaian ownership. Shareholders have voting rights, profit participation, and quarterly reports. Profits remain in Ghana.
+  </p>
 </section>
 
-<!-- 1️⃣2️⃣ Governance & Transparency -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Governance & Transparency</h2>
-  <p class="text-gray-300 max-w-3xl mx-auto fade-up">Independent board, quarterly audits, live investor dashboard with operational and financial updates.</p>
+<section class="slide hidden-slide" id="slide12">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Governance & Transparency</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Independent board oversees operations and finances. Quarterly audits, live dashboards, and transparency eliminate corruption.
+  </p>
 </section>
 
-<!-- 1️⃣3️⃣ Investor Protections -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Investor Protections</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>Tranche-based capital releases</li>
-    <li>Escrow for aircraft purchase</li>
-    <li>Voting rights on key milestones</li>
-  </ul>
+<section class="slide hidden-slide" id="slide13">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Investor Protections</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Capital released in tranches tied to milestones. Key decisions require shareholder approval. Escrow for major expenses ensures accountability.
+  </p>
 </section>
 
-<!-- 1️⃣4️⃣ Financial Snapshot -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-12 text-center fade-up">Financial Snapshot</h2>
+<section class="slide hidden-slide" id="slide14">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Financial Snapshot</h2>
   <div class="grid md:grid-cols-3 gap-6">
-    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt">
-      <h3 class="text-xl font-semibold mb-2">Initial Capital</h3>
-      <p class="text-gray-300 counter" data-target="56000000">$0</p>
+    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Initial Capital</h3>
+      <p class="text-2xl counter" data-target="56000000">$0</p>
     </div>
-    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt">
-      <h3 class="text-xl font-semibold mb-2">12-Month Reserve</h3>
-      <p class="text-gray-300 counter" data-target="7000000">$0</p>
+    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+      <h3 class="text-3xl font-semibold mb-4">12-Month Reserve</h3>
+      <p class="text-2xl counter" data-target="7000000">$0</p>
     </div>
-    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt">
-      <h3 class="text-xl font-semibold mb-2">Total Raise</h3>
-      <p class="text-gray-300 counter" data-target="67000000">$0</p>
+    <div class="tilt p-6 bg-zinc-900 rounded-xl border border-zinc-800 fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Total Raise</h3>
+      <p class="text-2xl counter" data-target="67000000">$0</p>
     </div>
   </div>
 </section>
 
-<!-- 1️⃣5️⃣ Revenue Model -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Revenue Model</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>Domestic vs Regional ticket pricing</li>
-    <li>Low operating costs → high margin</li>
-    <li>Profit-sharing for shareholders</li>
-  </ul>
+<section class="slide hidden-slide" id="slide15">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Revenue Model</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Ticket sales on domestic and regional routes. Low operating costs with ATR 72-600, profit-sharing with shareholders, and potential for strong margins.
+  </p>
 </section>
 
-<!-- 1️⃣6️⃣ Market Opportunity -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Market Opportunity</h2>
-  <p class="text-gray-300 max-w-3xl mx-auto fade-up">Growing domestic and regional air travel demand, gap in West African connectivity, revenue potential compared to foreign carriers.</p>
+<section class="slide hidden-slide" id="slide16">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Market Opportunity</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Growing Ghanaian air travel demand, under-served regional routes, and rising economic activity make this an ideal time to launch. Capture both domestic and ECOWAS markets.
+  </p>
 </section>
 
-<!-- 1️⃣7️⃣ Marketing & Branding -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Marketing & Branding</h2>
-  <p class="text-gray-300 max-w-3xl mx-auto fade-up">Ghanaian pride marketing, social media campaigns, partnerships, loyalty programs, repeat customer engagement.</p>
+<section class="slide hidden-slide" id="slide17">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Marketing & Branding</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Ghanaian pride, social media campaigns, corporate partnerships, loyalty programs, and tourism promotion. Create a recognizable, trusted brand.
+  </p>
 </section>
 
-<!-- 1️⃣8️⃣ Risk Mitigation -->
-<section class="py-20 px-6 md:px-24">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Risk Mitigation</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>Operational: Maintenance, weather, staffing</li>
-    <li>Financial: Currency fluctuations, inflation</li>
-    <li>Governance ensures transparency and accountability</li>
-    <li>Insurance & safety compliance</li>
-  </ul>
+<section class="slide hidden-slide" id="slide18">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Risk Mitigation</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Operational, financial, and market risks mitigated with insurance, governance, audits, and transparent reporting. Safety and contingency planning included.
+  </p>
 </section>
 
-<!-- 1️⃣9️⃣ Investor ROI -->
-<section class="py-20 px-6 md:px-24 bg-black/40">
-  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Investor ROI</h2>
-  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
-    <li>Long-term equity growth</li>
-    <li>Dividends from profits</li>
-    <li>100% Ghanaian ownership → reinvestment in the country</li>
-  </ul>
+<section class="slide hidden-slide" id="slide19">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Investor ROI</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Equity growth, profit-sharing, and dividends. Long-term ownership aligned with Ghanaian economic growth. Shareholders participate in major decisions.
+  </p>
 </section>
 
-<!-- 2️⃣0️⃣ CTA / Materials -->
-<section id="investor-materials" class="py-28 text-center px-6 md:px-24 fade-up">
-  <h2 class="text-4xl font-bold mb-6">Investor Materials</h2>
-  <p class="text-gray-300 max-w-2xl mx-auto mb-8">Download the deck, financial models, or view a sample PDF prospectus.</p>
-  <div class="flex gap-4 justify-center">
-    <a href="investor-deck.pdf" class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold" target="_blank">Download Deck</a>
-    <a href="financial-model.pdf" class="border border-white text-white px-6 py-3 rounded-xl" target="_blank">Financial Model</a>
-    <a href="prospectus.pdf" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-xl" target="_blank">Sample Prospectus</a>
+<section class="slide hidden-slide" id="slide20">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Investor Materials</h2>
+  <p class="text-2xl max-w-4xl mb-6 fade-text">
+    Access full investor deck, financial models, and prospectus. Review detailed projections, operations, and governance.
+  </p>
+  <div class="flex gap-6 justify-center">
+    <a href="investor-deck.pdf" class="bg-yellow-400 text-black px-8 py-4 rounded-xl font-semibold text-xl" target="_blank">Download Deck</a>
+    <a href="financial-model.pdf" class="border border-white text-white px-8 py-4 rounded-xl text-xl" target="_blank">View Financials</a>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="py-8 text-center text-gray-400 text-sm">
-  © Ghana National Air — Draft investor portal. All rights reserved.
-</footer>
+<!-- ============================
+Navigation & Indicator
+============================ -->
+
+<div id="prev" class="nav-arrow">&#8592;</div>
+<div id="next" class="nav-arrow">&#8594;</div>
+<div class="slide-indicator" id="slideIndicator">1 / 20</div>
 
 <script>
-  // Vanilla Tilt for cards
-  VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15, speed: 400, glare: true, "max-glare": 0.3 });
+// Slide Navigation
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
-  // Animate fade-up on scroll
-  const faders = document.querySelectorAll('.fade-up');
-  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-    entries.forEach(entry => {
-      if(!entry.isIntersecting) return;
-      entry.target.style.animation = 'fadeUp 1s forwards';
-      appearOnScroll.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(fader => { appearOnScroll.observe(fader); });
-
-  // Animate counters
-  const counters = document.querySelectorAll('.counter');
-  counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    const increment = target / 200;
-    let count = 0;
-    function updateCounter() {
-      count += increment;
-      if(count < target) {
-        counter.innerText = '$' + Math.floor(count).toLocaleString();
-        requestAnimationFrame(updateCounter);
-      } else {
-        counter.innerText = '$' + target.toLocaleString();
-      }
-    }
-    const observer = new IntersectionObserver(entries => {
-      if(entries[0].isIntersecting){
-        updateCounter();
-        observer.unobserve(counter);
-      }
-    }, {threshold: 0.5});
-    observer.observe(counter);
+function showSlide(index){
+  slides.forEach((s,i)=>{
+    if(i===index){ s.classList.remove('hidden-slide'); s.style.zIndex=1; } 
+    else{ s.classList.add('hidden-slide'); s.style.zIndex=0; }
   });
+  document.getElementById('slideIndicator').textContent = `${index+1} / ${totalSlides}`;
+}
+
+showSlide(currentSlide);
+
+document.getElementById('next').addEventListener('click', ()=>{
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+});
+
+document.getElementById('prev').addEventListener('click', ()=>{
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  showSlide(currentSlide);
+});
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key==='ArrowRight'){ currentSlide = (currentSlide + 1) % totalSlides; showSlide(currentSlide); }
+  if(e.key==='ArrowLeft'){ currentSlide = (currentSlide -1 + totalSlides) % totalSlides; showSlide(currentSlide); }
+});
+
+// Swipe support
+let startY;
+document.addEventListener('touchstart', e=>{ startY = e.touches[0].clientY; });
+document.addEventListener('touchend', e=>{
+  let endY = e.changedTouches[0].clientY;
+  if(startY - endY > 50){ currentSlide = (currentSlide + 1) % totalSlides; showSlide(currentSlide); }
+  if(endY - startY > 50){ currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; showSlide(currentSlide); }
+});
+
+// Counter animation
+document.querySelectorAll('.counter').forEach(el=>{
+  let target = +el.dataset.target;
+  let count = 0;
+  let step = Math.ceil(target/200);
+  let interval = setInterval(()=>{
+    count += step;
+    if(count >= target){ count = target; clearInterval(interval); count = target; }
+    el.textContent = "$" + count.toLocaleString();
+  }, 20);
+});
+
+// Tilt cards
+VanillaTilt.init(document.querySelectorAll(".tilt"), { max:15, speed:400, glare:true, "max-glare":0.3 });
 </script>
+
 </body>
 </html>
