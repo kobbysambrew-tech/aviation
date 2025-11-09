@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <style>
     body { background: linear-gradient(to bottom, #0b4f79, #000, #111); color:white; scroll-behavior: smooth;}
+    section { min-height: 100vh; display:flex; flex-direction:column; justify-content:center;}
     .fade-up { opacity:0; transform:translateY(30px); animation: fadeUp 1s forwards; }
     @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
     .bounce { animation: bounce 1.6s infinite; }
@@ -17,187 +18,256 @@
 </head>
 <body class="font-sans overflow-x-hidden">
 
-  <!-- HERO / VIDEO -->
-  <section class="relative h-screen w-full">
-    <video class="w-full h-full object-cover" autoplay muted loop>
-      <source src="your-video.mp4" type="video/mp4">
-    </video>
-    <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black/50">
-      <h1 class="text-5xl md:text-6xl font-bold mb-4 fade-up">Ghana National Air</h1>
-      <p class="text-xl md:text-2xl max-w-3xl mb-6 fade-up" style="animation-delay:0.2s;">
-        Launching two brand-new ATR 72-600 aircraft (or 1–2 years old). 100% Ghanaian shareholders. Regional routes, national impact.
-      </p>
-      <div class="flex gap-4 fade-up" style="animation-delay:0.4s;">
-        <a href="#investor-materials" class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold">Request Investor Deck</a>
-        <a href="#contact" class="bg-transparent border border-white px-6 py-3 rounded-xl">Contact</a>
-      </div>
-      <div class="absolute bottom-8 text-gray-300 bounce fade-up" style="animation-delay:0.6s;">↓ Scroll</div>
+<!-- 1️⃣ Hero / Vision -->
+<section class="relative h-screen w-full bg-black">
+  <video class="w-full h-full object-cover" autoplay muted loop>
+    <source src="your-video.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black/50">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4 fade-up">Ghana National Air</h1>
+    <p class="text-xl md:text-2xl max-w-3xl mb-6 fade-up" style="animation-delay:0.2s;">100% Ghanaian owned, launching two ATR 72-600 aircraft. Domestic & regional growth.</p>
+    <div class="flex gap-4 fade-up" style="animation-delay:0.4s;">
+      <a href="#investor-materials" class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold">Request Deck</a>
+      <a href="#contact" class="bg-transparent border border-white px-6 py-3 rounded-xl">Contact</a>
     </div>
-  </section>
+    <div class="absolute bottom-8 text-gray-300 bounce fade-up" style="animation-delay:0.6s;">↓ Scroll</div>
+  </div>
+</section>
 
-  <!-- MISSION / STORY -->
-  <section class="py-20 px-6 md:px-24">
-    <h2 class="text-4xl font-bold mb-8 text-center fade-up">Our Mission</h2>
-    <p class="text-gray-300 text-lg max-w-3xl mx-auto mb-4 fade-up">
-      Ghana has historically relied on foreign airlines for domestic and regional travel. Ghana National Air will change that.
-      Our mission is to provide safe, efficient, and fully Ghanaian-owned air service that keeps profits in the country, ensures transparency, and empowers investors.
-    </p>
-    <p class="text-gray-300 text-lg max-w-3xl mx-auto fade-up" style="animation-delay:0.2s;">
-      By directly owning part of the airline, shareholders enjoy revenue participation, oversight, and long-term equity growth as we expand across West Africa.
-    </p>
-  </section>
+<!-- 2️⃣ Mission Statement -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Our Mission</h2>
+  <p class="text-gray-300 text-lg max-w-3xl mx-auto fade-up">Provide Ghana with a fully-owned airline, keeping profits local, ensuring transparency, and empowering investors.</p>
+</section>
 
-  <!-- AIRCRAFT SECTION -->
-  <section class="py-20 px-6 md:px-24">
-    <h2 class="text-4xl font-bold mb-12 text-center fade-up">Why ATR 72-600</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
-        <h3 class="text-xl font-semibold mb-2">Cost (New / 1–2 Years)</h3>
-        <p class="text-gray-300">$29M–32M (new)<br>$24M–28M (1–2 yrs)</p>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
-        <h3 class="text-xl font-semibold mb-2">Capacity & Range</h3>
-        <p class="text-gray-300">68–78 seats<br>Range: 1,500 km — ideal for domestic & regional routes</p>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
-        <h3 class="text-xl font-semibold mb-2">Why Ghana</h3>
-        <p class="text-gray-300">Efficient fuel burn, short-field performance, low operating costs</p>
-      </div>
+<!-- 3️⃣ Problem / Opportunity -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">The Opportunity</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>Foreign airlines dominate domestic and regional routes.</li>
+    <li>Limited connectivity within Ghana and West Africa.</li>
+    <li>Revenue leaks outside the country.</li>
+    <li>Growing market demand for regional travel.</li>
+  </ul>
+</section>
+
+<!-- 4️⃣ Solution / Ghana National Air -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Our Solution</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>100% Ghanaian owned airline.</li>
+    <li>Modern ATR 72-600 fleet.</li>
+    <li>Revenue participation for shareholders.</li>
+    <li>Transparent operations with quarterly reporting.</li>
+  </ul>
+</section>
+
+<!-- 5️⃣ Why ATR 72-600 -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-12 text-center fade-up">Why ATR 72-600</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
+      <h3 class="text-xl font-semibold mb-2">Cost</h3>
+      <p class="text-gray-300">$29–32M (new)<br>$24–28M (1–2 yrs)</p>
     </div>
-  </section>
-
-  <!-- ROUTE MAP / PLAN -->
-  <section class="py-20 px-6 md:px-24">
-    <h2 class="text-4xl font-bold mb-12 text-center fade-up">Planned Routes</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up">
-        <h3 class="text-2xl font-semibold mb-4">Domestic Routes</h3>
-        <ul class="list-disc list-inside text-gray-300 space-y-2">
-          <li>Accra ↔ Kumasi</li>
-          <li>Accra ↔ Tamale</li>
-          <li>Accra ↔ Takoradi</li>
-        </ul>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up" style="animation-delay:0.2s;">
-        <h3 class="text-2xl font-semibold mb-4">Regional Routes</h3>
-        <ul class="list-disc list-inside text-gray-300 space-y-2">
-          <li>Accra ↔ Abidjan</li>
-          <li>Accra ↔ Lomé</li>
-          <li>Accra ↔ Lagos</li>
-        </ul>
-      </div>
+    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
+      <h3 class="text-xl font-semibold mb-2">Capacity & Range</h3>
+      <p class="text-gray-300">68–78 seats<br>Range: 1,500 km — perfect for domestic & regional routes</p>
     </div>
-    <div class="mt-10 text-gray-300 text-center fade-up" style="animation-delay:0.4s;">
-      <img src="ghana-map-routes.png" alt="Route Map" class="mx-auto w-full max-w-xl rounded-lg shadow-lg">
+    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 tilt" data-tilt data-tilt-max="15">
+      <h3 class="text-xl font-semibold mb-2">Efficiency</h3>
+      <p class="text-gray-300">Low operating costs, fuel-efficient, short-field performance</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- OPERATIONAL PLAN -->
-  <section class="py-20 px-6 md:px-24 bg-black/40">
-    <h2 class="text-4xl font-bold mb-12 text-center fade-up">18-Month Operational Plan</h2>
-    <ol class="list-decimal list-inside text-gray-300 space-y-4 max-w-3xl mx-auto fade-up">
-      <li>Raise Ghanaian equity for aircraft purchase</li>
-      <li>Secure GCAA AOC & approvals (6–12 months)</li>
-      <li>Recruit core leadership & key staff</li>
-      <li>Pilot training & maintenance setup</li>
-      <li>Launch revenue flights on core domestic & regional routes (Month 12–18)</li>
-    </ol>
-  </section>
+<!-- 6️⃣ Aircraft Interior -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Aircraft Interior</h2>
+  <img src="interior-image.png" alt="ATR 72 Interior" class="mx-auto rounded-lg shadow-lg fade-up">
+  <p class="text-gray-300 text-center max-w-3xl mx-auto mt-4 fade-up">Comfortable 68–78 seating layout, safety features, modern avionics, ideal for regional flights.</p>
+</section>
 
-  <!-- FINANCIAL SUMMARY with Counters -->
-  <section class="py-20 px-6 md:px-24">
-    <h2 class="text-4xl font-bold mb-12 text-center fade-up">Financial Snapshot</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
-        <h3 class="text-xl font-semibold mb-2">Initial Capital</h3>
-        <p class="text-gray-300 counter" data-target="56000000">$0</p>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
-        <h3 class="text-xl font-semibold mb-2">12-Month Operating Reserve</h3>
-        <p class="text-gray-300 counter" data-target="7000000">$0</p>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
-        <h3 class="text-xl font-semibold mb-2">Total Raise Target</h3>
-        <p class="text-gray-300 counter" data-target="67000000">$0</p>
-      </div>
+<!-- 7️⃣ Fleet Plan -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Fleet Plan</h2>
+  <p class="text-gray-300 max-w-3xl mx-auto fade-up">Start with 2 aircraft, fully new or 1–2 years old. Option to expand as demand grows. Full maintenance & spare strategy in place.</p>
+</section>
+
+<!-- 8️⃣ Domestic Routes -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Domestic Routes</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>Accra ↔ Kumasi</li>
+    <li>Accra ↔ Tamale</li>
+    <li>Accra ↔ Takoradi</li>
+  </ul>
+  <img src="ghana-map-routes.png" alt="Route Map" class="mx-auto w-full max-w-xl rounded-lg shadow-lg mt-4 fade-up">
+</section>
+
+<!-- 9️⃣ Regional Routes -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Regional Routes</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>Accra ↔ Abidjan</li>
+    <li>Accra ↔ Lomé</li>
+    <li>Accra ↔ Lagos</li>
+  </ul>
+</section>
+
+<!-- 🔟 Operational Timeline -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Operational Timeline</h2>
+  <ol class="list-decimal list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>Months 0–6: Raise equity & approvals</li>
+    <li>Months 6–12: Hiring, training, AOC completion</li>
+    <li>Months 12–18: Launch revenue flights</li>
+  </ol>
+</section>
+
+<!-- 1️⃣1️⃣ Shareholder Model -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Shareholder Model</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>100% Ghanaian investors only</li>
+    <li>Direct equity in airline</li>
+    <li>Quarterly reporting & oversight</li>
+  </ul>
+</section>
+
+<!-- 1️⃣2️⃣ Governance & Transparency -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Governance & Transparency</h2>
+  <p class="text-gray-300 max-w-3xl mx-auto fade-up">Independent board, quarterly audits, live investor dashboard with operational and financial updates.</p>
+</section>
+
+<!-- 1️⃣3️⃣ Investor Protections -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Investor Protections</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>Tranche-based capital releases</li>
+    <li>Escrow for aircraft purchase</li>
+    <li>Voting rights on key milestones</li>
+  </ul>
+</section>
+
+<!-- 1️⃣4️⃣ Financial Snapshot -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-12 text-center fade-up">Financial Snapshot</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt">
+      <h3 class="text-xl font-semibold mb-2">Initial Capital</h3>
+      <p class="text-gray-300 counter" data-target="56000000">$0</p>
     </div>
-  </section>
-
-  <!-- SHAREHOLDER & GOVERNANCE -->
-  <section class="py-20 px-6 md:px-24 bg-black/50">
-    <h2 class="text-4xl font-bold mb-12 text-center fade-up">Shareholder & Governance</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
-        <h3 class="text-2xl font-semibold mb-4">100% Ghanaian Ownership</h3>
-        <p class="text-gray-300">Founders and Ghanaian investors only. Independent board. Quarterly audits and live dashboard updates.</p>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt" data-tilt data-tilt-max="10">
-        <h3 class="text-2xl font-semibold mb-4">Investor Protections</h3>
-        <ul class="text-gray-300 list-disc list-inside space-y-2">
-          <li>Board observer rights for major investors</li>
-          <li>Escrow on aircraft purchases</li>
-          <li>Tranche-based capital releases tied to milestones</li>
-          <li>Quarterly financial transparency dashboard</li>
-        </ul>
-      </div>
+    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt">
+      <h3 class="text-xl font-semibold mb-2">12-Month Reserve</h3>
+      <p class="text-gray-300 counter" data-target="7000000">$0</p>
     </div>
-  </section>
-
-  <!-- INVESTOR MATERIALS CTA -->
-  <section id="investor-materials" class="py-28 text-center px-6 md:px-24 fade-up">
-    <h2 class="text-4xl font-bold mb-6">Investor Materials Ready</h2>
-    <p class="text-gray-300 max-w-2xl mx-auto mb-8">Download the investor deck, request financial models, or view a sample PDF prospectus.</p>
-    <div class="flex gap-4 justify-center">
-      <a href="investor-deck.pdf" class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold" target="_blank">Download Deck</a>
-      <a href="financial-model.pdf" class="border border-white text-white px-6 py-3 rounded-xl" target="_blank">Financial Model</a>
-      <a href="prospectus.pdf" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-xl" target="_blank">Sample Prospectus</a>
+    <div class="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 fade-up tilt">
+      <h3 class="text-xl font-semibold mb-2">Total Raise</h3>
+      <p class="text-gray-300 counter" data-target="67000000">$0</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="py-8 text-center text-gray-400 text-sm">
-    © Ghana National Air — Draft investor portal. All rights reserved.
-  </footer>
+<!-- 1️⃣5️⃣ Revenue Model -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Revenue Model</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>Domestic vs Regional ticket pricing</li>
+    <li>Low operating costs → high margin</li>
+    <li>Profit-sharing for shareholders</li>
+  </ul>
+</section>
 
-  <script>
-    // Vanilla Tilt for cards
-    VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15, speed: 400, glare: true, "max-glare": 0.3 });
+<!-- 1️⃣6️⃣ Market Opportunity -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Market Opportunity</h2>
+  <p class="text-gray-300 max-w-3xl mx-auto fade-up">Growing domestic and regional air travel demand, gap in West African connectivity, revenue potential compared to foreign carriers.</p>
+</section>
 
-    // Animate fade-up on scroll
-    const faders = document.querySelectorAll('.fade-up');
-    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-      entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.style.animation = 'fadeUp 1s forwards';
-        appearOnScroll.unobserve(entry.target);
-      });
-    }, appearOptions);
-    faders.forEach(fader => { appearOnScroll.observe(fader); });
+<!-- 1️⃣7️⃣ Marketing & Branding -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Marketing & Branding</h2>
+  <p class="text-gray-300 max-w-3xl mx-auto fade-up">Ghanaian pride marketing, social media campaigns, partnerships, loyalty programs, repeat customer engagement.</p>
+</section>
 
-    // Animate counters
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      const increment = target / 200;
-      let count = 0;
-      function updateCounter() {
-        count += increment;
-        if(count < target) {
-          counter.innerText = '$' + Math.floor(count).toLocaleString();
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.innerText = '$' + target.toLocaleString();
-        }
-      }
-      const observer = new IntersectionObserver(entries => {
-        if(entries[0].isIntersecting){
-          updateCounter();
-          observer.unobserve(counter);
-        }
-      }, {threshold: 0.5});
-      observer.observe(counter);
+<!-- 1️⃣8️⃣ Risk Mitigation -->
+<section class="py-20 px-6 md:px-24">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Risk Mitigation</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>Operational: Maintenance, weather, staffing</li>
+    <li>Financial: Currency fluctuations, inflation</li>
+    <li>Governance ensures transparency and accountability</li>
+    <li>Insurance & safety compliance</li>
+  </ul>
+</section>
+
+<!-- 1️⃣9️⃣ Investor ROI -->
+<section class="py-20 px-6 md:px-24 bg-black/40">
+  <h2 class="text-4xl font-bold mb-6 text-center fade-up">Investor ROI</h2>
+  <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-2 fade-up">
+    <li>Long-term equity growth</li>
+    <li>Dividends from profits</li>
+    <li>100% Ghanaian ownership → reinvestment in the country</li>
+  </ul>
+</section>
+
+<!-- 2️⃣0️⃣ CTA / Materials -->
+<section id="investor-materials" class="py-28 text-center px-6 md:px-24 fade-up">
+  <h2 class="text-4xl font-bold mb-6">Investor Materials</h2>
+  <p class="text-gray-300 max-w-2xl mx-auto mb-8">Download the deck, financial models, or view a sample PDF prospectus.</p>
+  <div class="flex gap-4 justify-center">
+    <a href="investor-deck.pdf" class="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold" target="_blank">Download Deck</a>
+    <a href="financial-model.pdf" class="border border-white text-white px-6 py-3 rounded-xl" target="_blank">Financial Model</a>
+    <a href="prospectus.pdf" class="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-xl" target="_blank">Sample Prospectus</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 text-center text-gray-400 text-sm">
+  © Ghana National Air — Draft investor portal. All rights reserved.
+</footer>
+
+<script>
+  // Vanilla Tilt for cards
+  VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 15, speed: 400, glare: true, "max-glare": 0.3 });
+
+  // Animate fade-up on scroll
+  const faders = document.querySelectorAll('.fade-up');
+  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      entry.target.style.animation = 'fadeUp 1s forwards';
+      appearOnScroll.unobserve(entry.target);
     });
-  </script>
+  }, appearOptions);
+  faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+  // Animate counters
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const increment = target / 200;
+    let count = 0;
+    function updateCounter() {
+      count += increment;
+      if(count < target) {
+        counter.innerText = '$' + Math.floor(count).toLocaleString();
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.innerText = '$' + target.toLocaleString();
+      }
+    }
+    const observer = new IntersectionObserver(entries => {
+      if(entries[0].isIntersecting){
+        updateCounter();
+        observer.unobserve(counter);
+      }
+    }, {threshold: 0.5});
+    observer.observe(counter);
+  });
+</script>
 </body>
 </html>
