@@ -3,220 +3,365 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ghana National Air — Investor Deck</title>
+<title>Ghana National Air — International Investor Deck</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 body { overflow:hidden; font-family:sans-serif; margin:0; }
-section { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:2rem; text-align:center; transition: all 0.8s ease; }
-.hidden-slide { opacity:0; transform:translateY(50px) scale(0.95); position:absolute; top:0; width:100%; height:100%; }
-.nav-arrow { position:fixed; top:50%; transform:translateY(-50%); font-size:3rem; cursor:pointer; z-index:50; color:white; user-select:none; }
+
+/* Slides */
+section {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:2rem;
+  text-align:center;
+  transition: all 0.8s ease;
+}
+
+/* Slide hide/show */
+.hidden-slide {
+  opacity:0;
+  transform:translateY(50px) scale(0.95);
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+}
+
+/* Navigation arrows */
+.nav-arrow {
+  position:fixed;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:3rem;
+  cursor:pointer;
+  z-index:50;
+  color:white;
+  user-select:none;
+}
 #prev { left:1rem; }
 #next { right:1rem; }
-.slide-indicator { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%); font-size:1.5rem; color:#fff; }
+
+/* Indicator */
+.slide-indicator {
+  position:fixed;
+  bottom:2rem;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:1.5rem;
+  color:#fff;
+}
+
+/* Cards, counters, animations */
 .tilt { max-width:400px; margin:1rem auto; }
 .counter { font-weight:bold; font-size:2rem; }
 .fade-text { opacity:0; transform:translateY(20px); animation:fadeInUp 0.8s forwards; }
 @keyframes fadeInUp { to { opacity:1; transform:translateY(0);} }
-.gradient-bg1 { background: linear-gradient(135deg,#00c6ff,#0072ff); }
-.gradient-bg2 { background: linear-gradient(135deg,#ffafbd,#ffc3a0); }
-.gradient-bg3 { background: linear-gradient(135deg,#ff9966,#ff5e62); }
-.button-accent { background: linear-gradient(90deg,#ffcc33,#ff6600); color:#000; font-weight:bold; padding:1rem 2rem; border-radius:12px; transition:all 0.3s ease; }
+
+/* GHANA COLORS */
+.gradient-bg1 { background: linear-gradient(135deg,#CE1126,#FCD116); }  /* red -> yellow */
+.gradient-bg2 { background: linear-gradient(135deg,#FCD116,#006B3F); }  /* yellow -> green */
+.gradient-bg3 { background: linear-gradient(135deg,#006B3F,#000000); }  /* green -> black */
+
+.button-accent {
+  background: linear-gradient(90deg,#FCD116,#CE1126);
+  color:#000;
+  font-weight:bold;
+  padding:1rem 2rem;
+  border-radius:12px;
+  transition:all 0.3s ease;
+}
 .button-accent:hover { transform:scale(1.05); }
 </style>
 </head>
 <body>
 
+<!-- OPTIONAL: logo if you have logo.png in the same folder -->
+<!-- <img src="logo.png" class="fixed top-4 left-4 w-32 z-50"> -->
+
 <!-- ============================
 Slides Start
 ============================ -->
 
+<!-- SLIDE 1: INTRO / VISION -->
 <section class="slide gradient-bg1 flex flex-col items-center justify-center text-white" id="slide1">
-  <video class="w-full h-full object-cover absolute top-0 left-0 z-0 opacity-30" autoplay muted loop>
+  <video class="w-full h-full object-cover absolute top-0 left-0 z-0 opacity-25" autoplay muted loop>
     <source src="your-video.mp4" type="video/mp4">
   </video>
   <div class="relative z-10 max-w-5xl">
-    <h1 class="text-7xl md:text-8xl font-bold mb-6 fade-text">Ghana National Air</h1>
+    <h1 class="text-7xl md:text-8xl font-bold mb-6 fade-text">
+      Ghana National Air
+    </h1>
     <p class="text-2xl md:text-3xl fade-text" style="animation-delay:0.2s">
-      Launching two ATR 72-600 aircraft, fully Ghanaian-owned. Connecting domestic and regional destinations while keeping profits in Ghana. Join us in building the nation's pride in aviation.
+      A Ghanaian-owned international airline built around the flagship Airbus A350-1000.
+      Long-haul routes from Accra to key global cities, with profits and ownership staying
+      in Ghana.
     </p>
   </div>
 </section>
 
+<!-- SLIDE 2: MISSION -->
 <section class="slide gradient-bg2 hidden-slide" id="slide2">
   <h2 class="text-6xl font-bold mb-6 fade-text">Our Mission</h2>
   <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Ghana National Air provides a fully Ghanaian-owned airline that strengthens domestic and regional connectivity. Profits stay in Ghana, empowering investors, stimulating economic growth, creating jobs, and promoting tourism. Transparency ensures trust, and passengers experience world-class service.
+    Ghana National Air’s mission is to give Ghana its own world-class, long-haul airline.
+    We want Accra to be a true international hub, connecting West Africa to Europe, North
+    America, the Middle East and beyond. Instead of sending profits overseas, Ghanaian
+    investors own the aircraft, share in the returns, and build a long-term national asset.
   </p>
 </section>
 
+<!-- SLIDE 3: OPPORTUNITY -->
 <section class="slide gradient-bg3 hidden-slide" id="slide3">
-  <h2 class="text-6xl font-bold mb-6 fade-text">The Opportunity</h2>
+  <h2 class="text-6xl font-bold mb-6 fade-text">The International Opportunity</h2>
   <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Domestic air travel is underserved and foreign carriers dominate. Many cities have limited connectivity. Rising economic activity, urbanization, and regional demand make this the perfect moment to launch a fully Ghanaian-owned airline.
+    West Africa is growing, but most long-haul traffic is still carried by foreign airlines.
+    Ghanaians flying to London, New York, Dubai, Amsterdam or Johannesburg usually ride
+    on non-Ghanaian carriers. A Ghanaian-owned A350-1000 operation can capture a share
+    of this demand, keep value in the country, and position Ghana as a regional gateway.
   </p>
 </section>
 
+<!-- SLIDE 4: SOLUTION -->
 <section class="slide gradient-bg1 hidden-slide" id="slide4">
   <h2 class="text-6xl font-bold mb-6 fade-text">Our Solution</h2>
   <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Operating ATR 72-600 aircraft for domestic and regional routes, Ghana National Air enables shareholders to enjoy profit participation and governance rights. Local investment retains economic value, builds aviation expertise, and ensures a sustainable airline.
+    Start with two brand-new Airbus A350-1000 aircraft configured for premium, long-haul
+    service. Launch nonstop and one-stop routes from Accra to high-yield international
+    destinations. Use a transparent shareholder structure so Ghanaians co-own the airline,
+    share profits, and have oversight into how every cedi is used.
   </p>
 </section>
 
+<!-- SLIDE 5: WHY A350-1000 -->
 <section class="slide gradient-bg2 hidden-slide" id="slide5">
-  <h2 class="text-6xl font-bold mb-12 fade-text">Why ATR 72-600</h2>
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Cost</h3>
+  <h2 class="text-6xl font-bold mb-12 fade-text">Why Airbus A350-1000</h2>
+  <div class="grid md:grid-cols-3 gap-8 text-white">
+    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Flagship Widebody</h3>
       <p class="text-xl leading-relaxed">
-        New aircraft cost $29–32M; 1–2 year old planes $24–28M. Low acquisition costs enable a cost-efficient startup fleet without sacrificing modern technology.
+        The A350-1000 is Airbus’ latest large widebody. It typically carries around
+        350–410 passengers in three classes, with space for generous business and
+        premium cabins. It is designed for long-haul comfort and modern fuel efficiency.
       </p>
     </div>
-    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Capacity & Range</h3>
+    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Range & Performance</h3>
       <p class="text-xl leading-relaxed">
-        Seats 68–78 passengers, with a range up to 1,500 km. Perfect for domestic and regional flights connecting key cities efficiently.
+        With a range of about 9,000 nautical miles, the A350-1000 can fly from Accra to
+        London, New York, Dubai, Beijing or Johannesburg. This enables nonstop or one-stop
+        connectivity from Ghana to major global markets.
       </p>
     </div>
-    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Efficiency</h3>
+    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Modern & Efficient</h3>
       <p class="text-xl leading-relaxed">
-        Fuel-efficient engines reduce operational costs. Minimal maintenance downtime ensures maximum availability and profitability.
+        Composite materials, advanced aerodynamics and new-generation Rolls-Royce engines
+        cut fuel burn and emissions compared to older twin-aisle aircraft. A modern fleet
+        improves reliability, passenger perception and long-term asset value.
       </p>
     </div>
   </div>
 </section>
 
+<!-- SLIDE 6: INTERIOR -->
 <section class="slide gradient-bg3 hidden-slide" id="slide6">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Aircraft Interior</h2>
-  <img src="atr72_interior.jpg" alt="Interior" class="rounded-lg shadow-lg w-full max-w-3xl mb-6 fade-text">
+  <h2 class="text-6xl font-bold mb-6 fade-text">Flagship Cabin Experience</h2>
+  <!-- keep your existing image filename so you don't break anything -->
+  <img src="atr72_interior.jpg"
+       alt="Long-haul widebody cabin interior"
+       class="rounded-lg shadow-lg w-full max-w-3xl mb-6 fade-text object-contain">
   <p class="text-2xl max-w-4xl fade-text">
-    Spacious, comfortable seating for 68–78 passengers with modern amenities. Boarding and disembarkation optimized for efficiency. Ensures superior passenger experience on every flight.
+    The long-haul cabin will be built around comfort: flat-bed business class,
+    extra-legroom premium economy, and a competitive economy cabin with modern
+    inflight entertainment. Lighting, colors and branding will reflect Ghana’s
+    identity so passengers feel at home the moment they board.
   </p>
 </section>
 
+<!-- SLIDE 7: FLEET PLAN -->
 <section class="slide gradient-bg1 hidden-slide" id="slide7">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Fleet Plan</h2>
+  <h2 class="text-6xl font-bold mb-6 fade-text">Fleet Plan — Phase 1</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Start with two new or 1–2 year old ATR 72-600 aircraft. Expand fleet as demand grows. Strategic maintenance and optimized scheduling ensure safety, reliability, and maximum revenue generation.
+    Phase 1 focuses on two brand-new Airbus A350-1000 aircraft, giving Ghana a genuine
+    long-haul flagship. As demand and performance are proven, options include expanding
+    with additional A350s or smaller Airbus narrowbodies for feeder routes into Accra.
+    Growth is tied to investor appetite and route profitability.
   </p>
 </section>
 
+<!-- SLIDE 8: INTERNATIONAL ROUTES (PHASE 1) -->
 <section class="slide gradient-bg2 hidden-slide" id="slide8">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Domestic Routes</h2>
+  <h2 class="text-6xl font-bold mb-6 fade-text">International Routes — Phase 1</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Initial routes include Accra ↔ Kumasi, Accra ↔ Tamale, and Accra ↔ Takoradi. 2–3 daily flights maximize revenue while providing essential connectivity. Efficient scheduling reduces costs and improves customer satisfaction.
+    Initial long-haul focus: Accra ↔ London, Accra ↔ New York (via one-stop if needed),
+    and Accra ↔ Dubai. These routes have strong Ghanaian demand, significant diaspora
+    traffic, and high-value business and tourism flows. Additional European gateways
+    like Amsterdam or Frankfurt can be layered in as performance stabilizes.
   </p>
 </section>
 
+<!-- SLIDE 9: AFRICA & REGIONAL CONNECTIVITY -->
 <section class="slide gradient-bg3 hidden-slide" id="slide9">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Regional Routes</h2>
+  <h2 class="text-6xl font-bold mb-6 fade-text">Africa & Regional Connectivity</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Expansion includes Accra ↔ Abidjan, Accra ↔ Lomé, Accra ↔ Lagos, eventually covering ECOWAS destinations. Routes selected for profitability and high demand, ensuring strong early adoption.
+    Over time, regional routes from Accra to Lagos, Abidjan, Freetown, Dakar and other
+    West African cities can feed the long-haul flights. This creates a true hub model:
+    regional passengers connect through Accra to Europe, the Middle East and North America
+    on Ghana-owned aircraft.
   </p>
 </section>
 
+<!-- SLIDE 10: TIMELINE -->
 <section class="slide gradient-bg1 hidden-slide" id="slide10">
   <h2 class="text-6xl font-bold mb-6 fade-text">Operational Timeline</h2>
   <ol class="text-2xl max-w-4xl space-y-4 fade-text">
-    <li>0–6 months: Raise equity, regulatory approvals, finalize aircraft selection.</li>
-    <li>6–12 months: Recruit/train staff, safety certifications, operational dashboards.</li>
-    <li>12–18 months: Launch flights, establish brand presence, optimize operations.</li>
+    <li><b>0–6 months:</b> Structure the company, finalize shareholder model, secure
+      commitments, begin discussions with Airbus and regulators.</li>
+    <li><b>6–12 months:</b> Place aircraft orders, begin crew recruitment and training,
+      design branding and cabin product, prepare systems and safety approvals.</li>
+    <li><b>12–24 months:</b> Take delivery of aircraft, complete route certifications,
+      soft-launch operations and ramp up frequencies on core international routes.</li>
   </ol>
 </section>
 
+<!-- SLIDE 11: SHAREHOLDER MODEL -->
 <section class="slide gradient-bg2 hidden-slide" id="slide11">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Shareholder Model</h2>
+  <h2 class="text-6xl font-bold mb-6 fade-text">Ghanaian Shareholder Model</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    100% Ghanaian ownership. Shareholders enjoy voting rights, profit participation, and transparent quarterly reporting. Retains national wealth while promoting accountability.
+    The airline is designed to be majority or fully Ghanaian-owned. Individual and
+    institutional investors in Ghana can purchase equity, participate in major
+    decisions, and benefit from long-term value creation. This is not a foreign carrier
+    operating in Ghana — it is a Ghanaian airline flying to the world.
   </p>
 </section>
 
+<!-- SLIDE 12: GOVERNANCE -->
 <section class="slide gradient-bg3 hidden-slide" id="slide12">
   <h2 class="text-6xl font-bold mb-6 fade-text">Governance & Transparency</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Independent board oversees operations and finances. Real-time dashboards, quarterly audits, and transparent reporting eliminate corruption and build investor confidence.
+    An independent board, clear reporting, and regular audits are built into the model.
+    Investors receive transparent quarterly updates on financial performance, routes,
+    and fleet plans. Digital dashboards and modern accounting systems help prevent
+    misuse of funds and reduce opportunities for corruption.
   </p>
 </section>
 
+<!-- SLIDE 13: INVESTOR PROTECTIONS -->
 <section class="slide gradient-bg1 hidden-slide" id="slide13">
   <h2 class="text-6xl font-bold mb-6 fade-text">Investor Protections</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Capital released in milestones. Major decisions require shareholder approval. Escrow accounts for significant expenses ensure accountability and mitigate risk.
+    Capital can be released in stages tied to real milestones: aircraft purchase, crew
+    training, regulatory approvals, and route launches. Escrow structures and strong
+    contracts for major expenses reduce risk. Key strategic decisions require board
+    and shareholder approval.
   </p>
 </section>
 
+<!-- SLIDE 14: FINANCIAL SNAPSHOT (NEW NUMBERS) -->
 <section class="slide gradient-bg2 hidden-slide" id="slide14">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Financial Snapshot</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Initial Capital</h3>
-      <p class="text-2xl counter" data-target="56000000">$0</p>
+  <h2 class="text-6xl font-bold mb-6 fade-text">Financial Snapshot — Phase 1</h2>
+  <div class="grid md:grid-cols-3 gap-6 text-white">
+    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Aircraft & Setup Capital</h3>
+      <p class="text-2xl counter" data-target="520000000">$0</p>
+      <p class="text-lg mt-3">
+        Two new Airbus A350-1000 aircraft plus initial training, tooling,
+        and launch costs.
+      </p>
     </div>
-    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">12-Month Reserve</h3>
-      <p class="text-2xl counter" data-target="7000000">$0</p>
+    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
+      <h3 class="text-3xl font-semibold mb-4">18-Month Operating Reserve</h3>
+      <p class="text-2xl counter" data-target="80000000">$0</p>
+      <p class="text-lg mt-3">
+        Fuel, crew, maintenance, marketing and overhead cushion to survive
+        the ramp-up period.
+      </p>
     </div>
-    <div class="tilt p-6 bg-white bg-opacity-20 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Total Raise</h3>
-      <p class="text-2xl counter" data-target="67000000">$0</p>
+    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
+      <h3 class="text-3xl font-semibold mb-4">Total Equity Raise Target</h3>
+      <p class="text-2xl counter" data-target="600000000">$0</p>
+      <p class="text-lg mt-3">
+        Approximate total equity raise for Phase 1 international operations.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Revenue Chart Slide -->
+<!-- SLIDE 15: REVENUE MODEL + CHART -->
 <section class="slide gradient-bg3 hidden-slide" id="slide15">
   <h2 class="text-6xl font-bold mb-6 fade-text">Revenue Model</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Revenue primarily through ticket sales, secondary through cargo and partnerships. Low operational costs maximize profitability while profit-sharing ensures shareholder returns.
+    Revenue is driven by long-haul ticket sales in business, premium economy, and
+    economy cabins, plus cargo and partnerships. Early years focus on load-factor
+    growth and brand trust rather than maximum margins. As routes mature, yields and
+    ancillary revenue (cargo, codeshares, loyalty) can significantly increase returns.
   </p>
   <div class="w-full max-w-4xl mt-8">
     <canvas id="revenueChart"></canvas>
   </div>
 </section>
 
-<!-- Profit Pie Chart Slide -->
+<!-- SLIDE 16: PROFIT DISTRIBUTION PIE -->
 <section class="slide gradient-bg2 hidden-slide" id="slide16">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Profit Distribution</h2>
+  <h2 class="text-6xl font-bold mb-6 fade-text">Profit Distribution Concept</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Shareholders participate fairly, promoting transparency and confidence.
+    Profits can be split between direct shareholder dividends, reinvestment in fleet and
+    routes, and a safety reserve fund. The exact structure can be refined with investors,
+    but the principle is simple: Ghanaian capital should see Ghanaian returns.
   </p>
   <div class="w-full max-w-3xl mt-8">
     <canvas id="profitPieChart"></canvas>
   </div>
 </section>
 
-<!-- Market Opportunity Slide -->
+<!-- SLIDE 17: MARKET OPPORTUNITY BAR -->
 <section class="slide gradient-bg1 hidden-slide" id="slide17">
   <h2 class="text-6xl font-bold mb-6 fade-text">Market Opportunity</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Ghanaian domestic air travel is growing, and regional ECOWAS routes are underserved. This bar chart illustrates potential passenger demand.
+    Demand exists across multiple regions: West Africa and the wider continent, Europe,
+    and North America. Even a small share of this market, carried on Ghana-owned aircraft,
+    can support a focused two-aircraft long-haul operation in the early years.
   </p>
   <div class="w-full max-w-4xl mt-8">
     <canvas id="marketBarChart"></canvas>
   </div>
 </section>
 
+<!-- SLIDE 18: MARKETING & BRANDING -->
 <section class="slide gradient-bg2 hidden-slide" id="slide18">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Marketing & Branding</h2>
+  <h2 class="text-6xl font-bold mb-6 fade-text">Marketing & Brand</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Leverage Ghanaian pride in aviation. Social media campaigns, loyalty programs, partnerships with local businesses, and tourism initiatives build strong brand recognition and passenger loyalty.
+    The brand is built on Ghana’s colors, culture and hospitality. Digital marketing,
+    diaspora engagement, corporate partnerships, and tourism promotion help fill seats.
+    Loyalty programs and good on-time performance keep passengers coming back instead
+    of defaulting to foreign carriers.
   </p>
 </section>
 
+<!-- SLIDE 19: RISK -->
 <section class="slide gradient-bg3 hidden-slide" id="slide19">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Risk Mitigation</h2>
+  <h2 class="text-6xl font-bold mb-6 fade-text">Risk & Reality</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Operational, financial, and market risks are mitigated through insurance, governance, audits, and contingency planning. Ensures safety, service reliability, and investor confidence.
+    Widebody long-haul operations are high-risk and capital-intensive. Fuel prices,
+    competition, geopolitical changes and currency fluctuations all impact results.
+    This concept requires disciplined management, strong governance, and investors
+    who understand both the upside and the risk.
   </p>
 </section>
 
+<!-- SLIDE 20: INVESTOR MATERIALS -->
 <section class="slide gradient-bg1 hidden-slide" id="slide20">
   <h2 class="text-6xl font-bold mb-6 fade-text">Investor Materials</h2>
   <p class="text-2xl max-w-4xl mb-6 fade-text">
-    Access the full investor deck, financial models, and prospectus. Review detailed projections, operational plans, and governance policies.
+    A detailed investor deck, financial model and term sheet can expand on fleet
+    financing options, governance structures and route-by-route economics. This
+    presentation is a high-level vision of what a Ghanaian-owned international
+    airline could look like.
   </p>
   <div class="flex gap-6 justify-center">
     <a href="investor-deck.pdf" class="button-accent" target="_blank">Download Deck</a>
@@ -240,8 +385,13 @@ const totalSlides = slides.length;
 
 function showSlide(index){
   slides.forEach((s,i)=>{
-    if(i===index){ s.classList.remove('hidden-slide'); s.style.zIndex=1; } 
-    else{ s.classList.add('hidden-slide'); s.style.zIndex=0; }
+    if(i===index){
+      s.classList.remove('hidden-slide');
+      s.style.zIndex=1;
+    } else {
+      s.classList.add('hidden-slide');
+      s.style.zIndex=0;
+    }
   });
   document.getElementById('slideIndicator').textContent = `${index+1} / ${totalSlides}`;
 }
@@ -259,8 +409,12 @@ document.getElementById('prev').addEventListener('click', ()=>{
 });
 
 document.addEventListener('keydown', (e)=>{
-  if(e.key==='ArrowRight'){ currentSlide = (currentSlide + 1) % totalSlides; showSlide(currentSlide); }
-  if(e.key==='ArrowLeft'){ currentSlide = (currentSlide -1 + totalSlides) % totalSlides; showSlide(currentSlide); }
+  if(e.key==='ArrowRight'){
+    currentSlide = (currentSlide + 1) % totalSlides; showSlide(currentSlide);
+  }
+  if(e.key==='ArrowLeft'){
+    currentSlide = (currentSlide -1 + totalSlides) % totalSlides; showSlide(currentSlide);
+  }
 });
 
 // Swipe support
@@ -268,8 +422,12 @@ let startY;
 document.addEventListener('touchstart', e=>{ startY = e.touches[0].clientY; });
 document.addEventListener('touchend', e=>{
   let endY = e.changedTouches[0].clientY;
-  if(startY - endY > 50){ currentSlide = (currentSlide + 1) % totalSlides; showSlide(currentSlide); }
-  if(endY - startY > 50){ currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; showSlide(currentSlide); }
+  if(startY - endY > 50){
+    currentSlide = (currentSlide + 1) % totalSlides; showSlide(currentSlide);
+  }
+  if(endY - startY > 50){
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; showSlide(currentSlide);
+  }
 });
 
 // Counter animation
@@ -279,34 +437,73 @@ document.querySelectorAll('.counter').forEach(el=>{
   let step = Math.ceil(target/200);
   let interval = setInterval(()=>{
     count += step;
-    if(count >= target){ count = target; clearInterval(interval); count = target; }
+    if(count >= target){
+      count = target; clearInterval(interval);
+    }
     el.textContent = "$" + count.toLocaleString();
   }, 20);
 });
 
 // Tilt cards
-VanillaTilt.init(document.querySelectorAll(".tilt"), { max:15, speed:400, glare:true, "max-glare":0.3 });
+VanillaTilt.init(document.querySelectorAll(".tilt"), {
+  max:15, speed:400, glare:true, "max-glare":0.3
+});
 
 // Charts
 const revenueCtx = document.getElementById('revenueChart').getContext('2d');
 const revenueChart = new Chart(revenueCtx, {
   type: 'line',
-  data: { labels: ['Year 1','Year 2','Year 3','Year 4','Year 5'], datasets: [{ label: 'Revenue ($M)', data: [5,12,20,28,35], backgroundColor:'rgba(255,204,51,0.3)', borderColor:'rgba(255,204,51,1)', borderWidth:3, fill:true, tension:0.3 }] },
-  options: { responsive:true, plugins:{ legend:{ display:false } } }
+  data: {
+    labels: ['Year 1','Year 2','Year 3','Year 4','Year 5'],
+    datasets: [{
+      label: 'Revenue (USD millions)',
+      data: [120,260,380,450,520],
+      backgroundColor:'rgba(252,209,22,0.25)',
+      borderColor:'rgba(252,209,22,1)',
+      borderWidth:3,
+      fill:true,
+      tension:0.3
+    }]
+  },
+  options: {
+    responsive:true,
+    plugins:{ legend:{ display:false } },
+    scales:{ y:{ beginAtZero:true } }
+  }
 });
 
 const profitCtx = document.getElementById('profitPieChart').getContext('2d');
 const profitPieChart = new Chart(profitCtx, {
   type: 'pie',
-  data: { labels:['Shareholders','Reinvestment','Reserve Fund'], datasets:[{ data:[50,30,20], backgroundColor:['#ffcc33','#00c6ff','#ff6600'] }] },
-  options:{ responsive:true, plugins:{ legend:{ position:'bottom' } } }
+  data: {
+    labels:['Shareholder Dividends','Reinvestment','Reserve Fund'],
+    datasets:[{
+      data:[55,25,20],
+      backgroundColor:['#FCD116','#CE1126','#006B3F']
+    }]
+  },
+  options:{
+    responsive:true,
+    plugins:{ legend:{ position:'bottom' } }
+  }
 });
 
 const marketCtx = document.getElementById('marketBarChart').getContext('2d');
 const marketBarChart = new Chart(marketCtx, {
   type:'bar',
-  data:{ labels:['Domestic','Regional','ECOWAS'], datasets:[{ label:'Potential Passengers (000s)', data:[250,150,100], backgroundColor:['#0072ff','#ff9966','#ff5e62'] }] },
-  options:{ responsive:true, plugins:{ legend:{ display:false } }, scales:{ y:{ beginAtZero:true } } }
+  data:{
+    labels:['Africa & Middle East','Europe','North America'],
+    datasets:[{
+      label:'Potential Annual Passengers (000s)',
+      data:[500,400,250],
+      backgroundColor:['#006B3F','#FCD116','#CE1126']
+    }]
+  },
+  options:{
+    responsive:true,
+    plugins:{ legend:{ display:false } },
+    scales:{ y:{ beginAtZero:true } }
+  }
 });
 </script>
 
