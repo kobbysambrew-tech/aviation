@@ -9,8 +9,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 body { overflow:hidden; font-family:sans-serif; margin:0; }
-
-/* Slides */
 section {
   min-height:100vh;
   display:flex;
@@ -20,9 +18,8 @@ section {
   padding:2rem;
   text-align:center;
   transition: all 0.8s ease;
+  color:#ffffff; /* make everything readable */
 }
-
-/* Slide hide/show */
 .hidden-slide {
   opacity:0;
   transform:translateY(50px) scale(0.95);
@@ -31,8 +28,6 @@ section {
   width:100%;
   height:100%;
 }
-
-/* Navigation arrows */
 .nav-arrow {
   position:fixed;
   top:50%;
@@ -45,8 +40,6 @@ section {
 }
 #prev { left:1rem; }
 #next { right:1rem; }
-
-/* Indicator */
 .slide-indicator {
   position:fixed;
   bottom:2rem;
@@ -55,17 +48,15 @@ section {
   font-size:1.5rem;
   color:#fff;
 }
-
-/* Cards, counters, animations */
 .tilt { max-width:400px; margin:1rem auto; }
 .counter { font-weight:bold; font-size:2rem; }
 .fade-text { opacity:0; transform:translateY(20px); animation:fadeInUp 0.8s forwards; }
 @keyframes fadeInUp { to { opacity:1; transform:translateY(0);} }
 
-/* GHANA COLORS */
-.gradient-bg1 { background: linear-gradient(135deg,#CE1126,#FCD116); }  /* red -> yellow */
-.gradient-bg2 { background: linear-gradient(135deg,#FCD116,#006B3F); }  /* yellow -> green */
-.gradient-bg3 { background: linear-gradient(135deg,#006B3F,#000000); }  /* green -> black */
+/* GHANA COLOR GRADIENTS (softened a bit for readability) */
+.gradient-bg1 { background: linear-gradient(135deg,#CE1126,#B80E20); } /* deep red */
+.gradient-bg2 { background: linear-gradient(135deg,#FCD116,#CE1126); } /* yellow -> red */
+.gradient-bg3 { background: linear-gradient(135deg,#006B3F,#000000); } /* green -> black */
 
 .button-accent {
   background: linear-gradient(90deg,#FCD116,#CE1126);
@@ -80,292 +71,297 @@ section {
 </head>
 <body>
 
-<!-- OPTIONAL: logo if you have logo.png in the same folder -->
+<!-- If you have a logo.png, uncomment this -->
 <!-- <img src="logo.png" class="fixed top-4 left-4 w-32 z-50"> -->
 
 <!-- ============================
 Slides Start
 ============================ -->
 
-<!-- SLIDE 1: INTRO / VISION -->
-<section class="slide gradient-bg1 flex flex-col items-center justify-center text-white" id="slide1">
-  <video class="w-full h-full object-cover absolute top-0 left-0 z-0 opacity-25" autoplay muted loop>
-    <source src="your-video.mp4" type="video/mp4">
-  </video>
+<!-- 1. INTRO -->
+<section class="slide gradient-bg1 flex flex-col items-center justify-center" id="slide1">
+  <div class="absolute inset-0">
+    <!-- replace hero.jpg if you have a better image, or leave it blank color -->
+    <!-- <img src="hero.jpg" class="w-full h-full object-cover opacity-30"> -->
+  </div>
   <div class="relative z-10 max-w-5xl">
-    <h1 class="text-7xl md:text-8xl font-bold mb-6 fade-text">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-text">
       Ghana National Air
     </h1>
     <p class="text-2xl md:text-3xl fade-text" style="animation-delay:0.2s">
-      A Ghanaian-owned international airline built around the flagship Airbus A350-1000.
-      Long-haul routes from Accra to key global cities, with profits and ownership staying
-      in Ghana.
+      A Ghanaian-owned international airline built around the Airbus A350-1000.
+      Long-haul routes from Accra and Kumasi to key global cities — with profits,
+      ownership and control staying in Ghana.
     </p>
   </div>
 </section>
 
-<!-- SLIDE 2: MISSION -->
+<!-- 2. MISSION -->
 <section class="slide gradient-bg2 hidden-slide" id="slide2">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Our Mission</h2>
-  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Ghana National Air’s mission is to give Ghana its own world-class, long-haul airline.
-    We want Accra to be a true international hub, connecting West Africa to Europe, North
-    America, the Middle East and beyond. Instead of sending profits overseas, Ghanaian
-    investors own the aircraft, share in the returns, and build a long-term national asset.
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Our Mission</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    The mission of Ghana National Air is to give Ghana its own world-class long-haul airline,
+    not just rely on foreign carriers. We want to turn Accra—and eventually Kumasi—into real
+    international hubs that connect West Africa to Europe, North America and the Middle East.
+    Instead of sending ticket money abroad, Ghanaian investors will own the aircraft and share
+    in the returns.
   </p>
 </section>
 
-<!-- SLIDE 3: OPPORTUNITY -->
+<!-- 3. INTERNATIONAL OPPORTUNITY -->
 <section class="slide gradient-bg3 hidden-slide" id="slide3">
-  <h2 class="text-6xl font-bold mb-6 fade-text">The International Opportunity</h2>
-  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    West Africa is growing, but most long-haul traffic is still carried by foreign airlines.
-    Ghanaians flying to London, New York, Dubai, Amsterdam or Johannesburg usually ride
-    on non-Ghanaian carriers. A Ghanaian-owned A350-1000 operation can capture a share
-    of this demand, keep value in the country, and position Ghana as a regional gateway.
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">The International Opportunity</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    West Africa has growing demand for international travel, but most long-haul seats are
+    controlled by non-African airlines. Ghanaians flying to London, New York, Dubai or
+    Amsterdam usually travel on foreign planes. A Ghanaian-owned A350-1000 operation
+    allows us to capture part of that demand and keep value, jobs and tax revenue in Ghana.
   </p>
 </section>
 
-<!-- SLIDE 4: SOLUTION -->
+<!-- 4. WHY A350-1000 -->
 <section class="slide gradient-bg1 hidden-slide" id="slide4">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Our Solution</h2>
-  <p class="text-2xl max-w-4xl fade-text" style="animation-delay:0.2s">
-    Start with two brand-new Airbus A350-1000 aircraft configured for premium, long-haul
-    service. Launch nonstop and one-stop routes from Accra to high-yield international
-    destinations. Use a transparent shareholder structure so Ghanaians co-own the airline,
-    share profits, and have oversight into how every cedi is used.
-  </p>
-</section>
-
-<!-- SLIDE 5: WHY A350-1000 -->
-<section class="slide gradient-bg2 hidden-slide" id="slide5">
-  <h2 class="text-6xl font-bold mb-12 fade-text">Why Airbus A350-1000</h2>
-  <div class="grid md:grid-cols-3 gap-8 text-white">
-    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Flagship Widebody</h3>
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Why Airbus A350-1000</h2>
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl">
+    <div class="tilt p-6 bg-white bg-opacity-10 rounded-xl border border-white fade-text">
+      <h3 class="text-2xl font-semibold mb-4">Flagship Widebody</h3>
       <p class="text-xl leading-relaxed">
-        The A350-1000 is Airbus’ latest large widebody. It typically carries around
-        350–410 passengers in three classes, with space for generous business and
-        premium cabins. It is designed for long-haul comfort and modern fuel efficiency.
+        The A350-1000 is Airbus’ latest large long-haul aircraft. It typically carries around
+        350–410 passengers with a modern, quiet cabin. Using this aircraft immediately positions
+        Ghana National Air as a serious, premium international airline.
       </p>
     </div>
-    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Range & Performance</h3>
+    <div class="tilt p-6 bg-white bg-opacity-10 rounded-xl border border-white fade-text">
+      <h3 class="text-2xl font-semibold mb-4">Range & Performance</h3>
       <p class="text-xl leading-relaxed">
-        With a range of about 9,000 nautical miles, the A350-1000 can fly from Accra to
-        London, New York, Dubai, Beijing or Johannesburg. This enables nonstop or one-stop
-        connectivity from Ghana to major global markets.
+        With a range near 9,000 nautical miles, the A350-1000 can operate routes like
+        Accra–London, Accra–New York (with possible initial one-stop), Accra–Dubai and
+        other major global links. This range gives flexibility for future route growth.
       </p>
     </div>
-    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Modern & Efficient</h3>
+    <div class="tilt p-6 bg-white bg-opacity-10 rounded-xl border border-white fade-text">
+      <h3 class="text-2xl font-semibold mb-4">Efficiency & Image</h3>
       <p class="text-xl leading-relaxed">
-        Composite materials, advanced aerodynamics and new-generation Rolls-Royce engines
-        cut fuel burn and emissions compared to older twin-aisle aircraft. A modern fleet
-        improves reliability, passenger perception and long-term asset value.
+        Advanced materials, aerodynamics and engines lower fuel burn compared to older
+        widebodies. At the same time, the A350-1000 has a modern “flagship” image that helps
+        attract higher-yield passengers and partnerships.
       </p>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 6: INTERIOR -->
-<section class="slide gradient-bg3 hidden-slide" id="slide6">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Flagship Cabin Experience</h2>
-  <!-- keep your existing image filename so you don't break anything -->
+<!-- 5. KUMASI / PREMPEH I INTERNATIONAL AIRPORT -->
+<section class="slide gradient-bg3 hidden-slide" id="slide5">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Kumasi: Growing Second Hub</h2>
+  <p class="text-2xl max-w-4xl fade-text">
+    Kumasi’s Prempeh I International Airport has been undergoing major expansion, including a new
+    terminal designed to handle around one million passengers a year and runway extension to around
+    2,320 meters. That turns Kumasi from a purely domestic airport into a serious regional and
+    limited international gateway, supporting future routes and feeding traffic into long-haul
+    flights from Accra.
+  </p>
+</section>
+
+<!-- 6. CABIN EXPERIENCE (uses your existing image) -->
+<section class="slide gradient-bg1 hidden-slide" id="slide6">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Cabin Experience</h2>
   <img src="atr72_interior.jpg"
        alt="Long-haul widebody cabin interior"
        class="rounded-lg shadow-lg w-full max-w-3xl mb-6 fade-text object-contain">
   <p class="text-2xl max-w-4xl fade-text">
-    The long-haul cabin will be built around comfort: flat-bed business class,
-    extra-legroom premium economy, and a competitive economy cabin with modern
-    inflight entertainment. Lighting, colors and branding will reflect Ghana’s
-    identity so passengers feel at home the moment they board.
+    The long-haul cabin concept includes full flat-bed business class, a comfortable premium
+    economy section, and a modern economy cabin with personal screens at every seat.
+    The color scheme, uniforms and onboard service can highlight Ghana’s culture so
+    passengers feel at home the moment they board.
   </p>
 </section>
 
-<!-- SLIDE 7: FLEET PLAN -->
-<section class="slide gradient-bg1 hidden-slide" id="slide7">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Fleet Plan — Phase 1</h2>
+<!-- 7. ROUTES PHASE 1 -->
+<section class="slide gradient-bg2 hidden-slide" id="slide7">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Phase 1 Routes — Long-Haul</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Phase 1 focuses on two brand-new Airbus A350-1000 aircraft, giving Ghana a genuine
-    long-haul flagship. As demand and performance are proven, options include expanding
-    with additional A350s or smaller Airbus narrowbodies for feeder routes into Accra.
-    Growth is tied to investor appetite and route profitability.
+    Initial focus is on a small number of high-demand international routes:
+    Accra–London, Accra–Dubai, and Accra–a North American gateway (such as New York or
+    Toronto, possibly starting with a one-stop option). The goal is to keep the operation
+    tight and focused while building reliability and brand recognition.
   </p>
 </section>
 
-<!-- SLIDE 8: INTERNATIONAL ROUTES (PHASE 1) -->
-<section class="slide gradient-bg2 hidden-slide" id="slide8">
-  <h2 class="text-6xl font-bold mb-6 fade-text">International Routes — Phase 1</h2>
+<!-- 8. ACCRA + KUMASI FEEDER NETWORK -->
+<section class="slide gradient-bg3 hidden-slide" id="slide8">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Accra + Kumasi Network</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Initial long-haul focus: Accra ↔ London, Accra ↔ New York (via one-stop if needed),
-    and Accra ↔ Dubai. These routes have strong Ghanaian demand, significant diaspora
-    traffic, and high-value business and tourism flows. Additional European gateways
-    like Amsterdam or Frankfurt can be layered in as performance stabilizes.
+    Over time, domestic and regional flights from Kumasi, Tamale, Takoradi and other cities
+    can feed long-haul departures from Accra. Kumasi’s upgraded airport makes it easier for
+    passengers in the middle belt and northern regions to access international flights
+    without always having to connect through foreign hubs.
   </p>
 </section>
 
-<!-- SLIDE 9: AFRICA & REGIONAL CONNECTIVITY -->
-<section class="slide gradient-bg3 hidden-slide" id="slide9">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Africa & Regional Connectivity</h2>
-  <p class="text-2xl max-w-4xl fade-text">
-    Over time, regional routes from Accra to Lagos, Abidjan, Freetown, Dakar and other
-    West African cities can feed the long-haul flights. This creates a true hub model:
-    regional passengers connect through Accra to Europe, the Middle East and North America
-    on Ghana-owned aircraft.
-  </p>
-</section>
-
-<!-- SLIDE 10: TIMELINE -->
-<section class="slide gradient-bg1 hidden-slide" id="slide10">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Operational Timeline</h2>
+<!-- 9. TIMELINE -->
+<section class="slide gradient-bg1 hidden-slide" id="slide9">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Operational Timeline (High-Level)</h2>
   <ol class="text-2xl max-w-4xl space-y-4 fade-text">
-    <li><b>0–6 months:</b> Structure the company, finalize shareholder model, secure
-      commitments, begin discussions with Airbus and regulators.</li>
-    <li><b>6–12 months:</b> Place aircraft orders, begin crew recruitment and training,
-      design branding and cabin product, prepare systems and safety approvals.</li>
-    <li><b>12–24 months:</b> Take delivery of aircraft, complete route certifications,
-      soft-launch operations and ramp up frequencies on core international routes.</li>
+    <li><b>0–6 months:</b> Finalize shareholder structure, refine business plan, begin Airbus
+      discussions, engage regulators and key partners.</li>
+    <li><b>6–12 months:</b> Place orders or secure lease agreements for two A350-1000s, start
+      recruitment and training, design brand and cabin product.</li>
+    <li><b>12–24 months:</b> Take delivery of aircraft, complete route certifications and test
+      flights, and launch limited long-haul services from Accra.</li>
   </ol>
 </section>
 
-<!-- SLIDE 11: SHAREHOLDER MODEL -->
-<section class="slide gradient-bg2 hidden-slide" id="slide11">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Ghanaian Shareholder Model</h2>
+<!-- 10. SHAREHOLDER MODEL -->
+<section class="slide gradient-bg2 hidden-slide" id="slide10">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Ghanaian Shareholder Model</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    The airline is designed to be majority or fully Ghanaian-owned. Individual and
-    institutional investors in Ghana can purchase equity, participate in major
-    decisions, and benefit from long-term value creation. This is not a foreign carrier
-    operating in Ghana — it is a Ghanaian airline flying to the world.
+    The vision is for Ghanaians—individuals, pension funds, institutions and diaspora investors—
+    to own the airline. Shareholders would supply the capital that would normally come from
+    foreign banks, and in return they receive equity, dividends when the airline becomes
+    profitable, and a voice in major decisions.
   </p>
 </section>
 
-<!-- SLIDE 12: GOVERNANCE -->
-<section class="slide gradient-bg3 hidden-slide" id="slide12">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Governance & Transparency</h2>
+<!-- 11. GOVERNANCE & NO-CORRUPTION MESSAGE -->
+<section class="slide gradient-bg3 hidden-slide" id="slide11">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Governance & Transparency</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    An independent board, clear reporting, and regular audits are built into the model.
-    Investors receive transparent quarterly updates on financial performance, routes,
-    and fleet plans. Digital dashboards and modern accounting systems help prevent
-    misuse of funds and reduce opportunities for corruption.
+    Strong governance is essential, especially at this scale. An independent board, audited
+    accounts, and transparent reporting are built into the model. Major spending and fleet
+    decisions are approved at board and shareholder level, reducing opportunities for
+    corruption and misuse of funds.
   </p>
 </section>
 
-<!-- SLIDE 13: INVESTOR PROTECTIONS -->
-<section class="slide gradient-bg1 hidden-slide" id="slide13">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Investor Protections</h2>
+<!-- 12. AIRCRAFT COST EXPLAINED -->
+<section class="slide gradient-bg1 hidden-slide" id="slide12">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Aircraft Cost — Big Picture</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Capital can be released in stages tied to real milestones: aircraft purchase, crew
-    training, regulatory approvals, and route launches. Escrow structures and strong
-    contracts for major expenses reduce risk. Key strategic decisions require board
-    and shareholder approval.
+    The official “list price” of an Airbus A350-1000 is a bit over USD 360 million per aircraft.
+    Airlines normally negotiate large discounts, or use leasing structures, but even with
+    discounts this is a very expensive plane. For planning purposes, we can assume a net
+    acquisition cost (after negotiation or lease structure) in the range of roughly
+    USD 250–280 million per aircraft.
   </p>
 </section>
 
-<!-- SLIDE 14: FINANCIAL SNAPSHOT (NEW NUMBERS) -->
-<section class="slide gradient-bg2 hidden-slide" id="slide14">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Financial Snapshot — Phase 1</h2>
-  <div class="grid md:grid-cols-3 gap-6 text-white">
-    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Aircraft & Setup Capital</h3>
-      <p class="text-2xl counter" data-target="520000000">$0</p>
+<!-- 13. STARTUP COST BREAKDOWN -->
+<section class="slide gradient-bg2 hidden-slide" id="slide13">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Illustrative Startup Budget</h2>
+  <p class="text-2xl max-w-4xl fade-text mb-6">
+    These are simplified, rounded numbers for discussion — not final quotes. They show
+    roughly how much capital would be needed to launch and survive the first phase:
+  </p>
+  <ul class="text-2xl max-w-4xl space-y-3 fade-text">
+    <li>• Approx. <b>USD 520 million</b> for two A350-1000s (combined net purchase / lease value).</li>
+    <li>• Around <b>USD 60 million</b> for training, systems, spare parts, marketing and setup.</li>
+    <li>• Around <b>USD 90 million</b> as an 18-month operating reserve (fuel, crew, maintenance, fees).</li>
+  </ul>
+</section>
+
+<!-- 14. FINANCIAL SNAPSHOT COUNTERS -->
+<section class="slide gradient-bg3 hidden-slide" id="slide14">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Financial Snapshot — Phase 1</h2>
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl">
+    <div class="tilt p-6 bg-white bg-opacity-10 rounded-xl border border-white fade-text">
+      <h3 class="text-2xl font-semibold mb-4">Aircraft & Setup</h3>
+      <p class="text-2xl counter" data-target="580000000">$0</p>
       <p class="text-lg mt-3">
-        Two new Airbus A350-1000 aircraft plus initial training, tooling,
-        and launch costs.
+        Approximate combined capital for aircraft and all startup investments
+        (rounded planning figure).
       </p>
     </div>
-    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">18-Month Operating Reserve</h3>
-      <p class="text-2xl counter" data-target="80000000">$0</p>
+    <div class="tilt p-6 bg-white bg-opacity-10 rounded-xl border border-white fade-text">
+      <h3 class="text-2xl font-semibold mb-4">Operating Reserve</h3>
+      <p class="text-2xl counter" data-target="90000000">$0</p>
       <p class="text-lg mt-3">
-        Fuel, crew, maintenance, marketing and overhead cushion to survive
-        the ramp-up period.
+        Illustrative 18-month reserve to keep the airline alive while routes mature.
       </p>
     </div>
-    <div class="tilt p-6 bg-white bg-opacity-15 rounded-xl border border-white fade-text">
-      <h3 class="text-3xl font-semibold mb-4">Total Equity Raise Target</h3>
-      <p class="text-2xl counter" data-target="600000000">$0</p>
+    <div class="tilt p-6 bg-white bg-opacity-10 rounded-xl border border-white fade-text">
+      <h3 class="text-2xl font-semibold mb-4">Total Equity Target</h3>
+      <p class="text-2xl counter" data-target="670000000">$0</p>
       <p class="text-lg mt-3">
-        Approximate total equity raise for Phase 1 international operations.
+        Approximate total capital required from Ghanaian and diaspora investors,
+        assuming no bank debt.
       </p>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 15: REVENUE MODEL + CHART -->
-<section class="slide gradient-bg3 hidden-slide" id="slide15">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Revenue Model</h2>
+<!-- 15. REVENUE MODEL CHART -->
+<section class="slide gradient-bg1 hidden-slide" id="slide15">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Revenue Model (Illustrative)</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Revenue is driven by long-haul ticket sales in business, premium economy, and
-    economy cabins, plus cargo and partnerships. Early years focus on load-factor
-    growth and brand trust rather than maximum margins. As routes mature, yields and
-    ancillary revenue (cargo, codeshares, loyalty) can significantly increase returns.
+    Revenue comes from premium and economy tickets on long-haul routes, plus cargo and
+    partnerships. Early years focus on achieving good load factors and building trust.
+    As the brand stabilizes, yields and ancillary revenue can improve, lifting margins.
   </p>
   <div class="w-full max-w-4xl mt-8">
     <canvas id="revenueChart"></canvas>
   </div>
 </section>
 
-<!-- SLIDE 16: PROFIT DISTRIBUTION PIE -->
+<!-- 16. PROFIT DISTRIBUTION -->
 <section class="slide gradient-bg2 hidden-slide" id="slide16">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Profit Distribution Concept</h2>
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">How Profits Could Be Shared</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Profits can be split between direct shareholder dividends, reinvestment in fleet and
-    routes, and a safety reserve fund. The exact structure can be refined with investors,
-    but the principle is simple: Ghanaian capital should see Ghanaian returns.
+    A simple approach is to split profits between dividends, reinvestment and reserves.
+    The exact percentages can be adjusted with investors, but the key idea is that
+    Ghanaian shareholders see clear, fair benefit from the success of the airline.
   </p>
   <div class="w-full max-w-3xl mt-8">
     <canvas id="profitPieChart"></canvas>
   </div>
 </section>
 
-<!-- SLIDE 17: MARKET OPPORTUNITY BAR -->
-<section class="slide gradient-bg1 hidden-slide" id="slide17">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Market Opportunity</h2>
+<!-- 17. MARKET OPPORTUNITY -->
+<section class="slide gradient-bg3 hidden-slide" id="slide17">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Market Opportunity</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Demand exists across multiple regions: West Africa and the wider continent, Europe,
-    and North America. Even a small share of this market, carried on Ghana-owned aircraft,
-    can support a focused two-aircraft long-haul operation in the early years.
+    International demand to and from Ghana and the wider region is driven by business
+    travel, tourism, education and the diaspora. Capturing even a modest share of West
+    Africa–Europe, West Africa–Middle East and West Africa–North America flows can
+    support a focused two-aircraft long-haul operation.
   </p>
   <div class="w-full max-w-4xl mt-8">
     <canvas id="marketBarChart"></canvas>
   </div>
 </section>
 
-<!-- SLIDE 18: MARKETING & BRANDING -->
-<section class="slide gradient-bg2 hidden-slide" id="slide18">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Marketing & Brand</h2>
+<!-- 18. BRAND & MARKETING -->
+<section class="slide gradient-bg1 hidden-slide" id="slide18">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Brand & Marketing Approach</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    The brand is built on Ghana’s colors, culture and hospitality. Digital marketing,
-    diaspora engagement, corporate partnerships, and tourism promotion help fill seats.
-    Loyalty programs and good on-time performance keep passengers coming back instead
-    of defaulting to foreign carriers.
+    The brand can lean heavily into Ghana’s colors, culture and hospitality. Marketing
+    would focus on the Ghanaian and West African diaspora, corporate partners, travel
+    agencies and tourism boards. A simple, reliable product with honest communication
+    is more important than expensive gimmicks.
   </p>
 </section>
 
-<!-- SLIDE 19: RISK -->
+<!-- 19. RISK & REALITY -->
 <section class="slide gradient-bg3 hidden-slide" id="slide19">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Risk & Reality</h2>
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Risk & Reality Check</h2>
   <p class="text-2xl max-w-4xl fade-text">
-    Widebody long-haul operations are high-risk and capital-intensive. Fuel prices,
-    competition, geopolitical changes and currency fluctuations all impact results.
-    This concept requires disciplined management, strong governance, and investors
-    who understand both the upside and the risk.
+    This is a high-risk project. Widebody long-haul operations are extremely capital-intensive
+    and sensitive to fuel prices, exchange rates, political changes and competition. The
+    numbers shown here are rough planning figures, not guarantees. Any real launch would
+    require deep due diligence and professional airline management.
   </p>
 </section>
 
-<!-- SLIDE 20: INVESTOR MATERIALS -->
-<section class="slide gradient-bg1 hidden-slide" id="slide20">
-  <h2 class="text-6xl font-bold mb-6 fade-text">Investor Materials</h2>
+<!-- 20. INVESTOR MATERIALS -->
+<section class="slide gradient-bg2 hidden-slide" id="slide20">
+  <h2 class="text-4xl md:text-6xl font-bold mb-6 fade-text">Investor Materials</h2>
   <p class="text-2xl max-w-4xl mb-6 fade-text">
-    A detailed investor deck, financial model and term sheet can expand on fleet
-    financing options, governance structures and route-by-route economics. This
-    presentation is a high-level vision of what a Ghanaian-owned international
-    airline could look like.
+    A detailed prospectus, financial model and risk analysis can be prepared for serious
+    investors. Those documents would go into more detail on financing structures, phasing,
+    and possible alternatives if a full A350-1000 launch is considered too aggressive.
   </p>
-  <div class="flex gap-6 justify-center">
-    <a href="investor-deck.pdf" class="button-accent" target="_blank">Download Deck</a>
-    <a href="financial-model.pdf" class="button-accent" target="_blank">View Financials</a>
+  <div class="flex flex-wrap gap-6 justify-center">
+    <a href="investor-deck.pdf" class="button-accent" target="_blank">Download Deck (PDF)</a>
+    <a href="financial-model.pdf" class="button-accent" target="_blank">View Financial Model</a>
   </div>
 </section>
 
@@ -457,7 +453,7 @@ const revenueChart = new Chart(revenueCtx, {
     labels: ['Year 1','Year 2','Year 3','Year 4','Year 5'],
     datasets: [{
       label: 'Revenue (USD millions)',
-      data: [120,260,380,450,520],
+      data: [150,280,380,450,520],
       backgroundColor:'rgba(252,209,22,0.25)',
       borderColor:'rgba(252,209,22,1)',
       borderWidth:3,
@@ -476,9 +472,9 @@ const profitCtx = document.getElementById('profitPieChart').getContext('2d');
 const profitPieChart = new Chart(profitCtx, {
   type: 'pie',
   data: {
-    labels:['Shareholder Dividends','Reinvestment','Reserve Fund'],
+    labels:['Dividends','Reinvestment','Reserve Fund'],
     datasets:[{
-      data:[55,25,20],
+      data:[50,30,20],
       backgroundColor:['#FCD116','#CE1126','#006B3F']
     }]
   },
@@ -494,7 +490,7 @@ const marketBarChart = new Chart(marketCtx, {
   data:{
     labels:['Africa & Middle East','Europe','North America'],
     datasets:[{
-      label:'Potential Annual Passengers (000s)',
+      label:'Potential Annual Passengers (000s) — Illustrative',
       data:[500,400,250],
       backgroundColor:['#006B3F','#FCD116','#CE1126']
     }]
